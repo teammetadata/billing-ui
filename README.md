@@ -1,1 +1,11 @@
-# billing-ui
+# billing-ui - team Metadata
+#
+Recall that you will be developing a software product that will be distributed to an end user market (review Unit 1’s introduction). You only have 6–7 weeks to develop your software product. So, consider this time frame as you define your product. An application that records the location of your parked car and then helps you find it would be a good example of a marketable, yet simple, application to develop in this time period. Also, look at other product examples in Course Documents.
+
+Unit 1 and Unit 2’s major focus is to create your project team and define the software product you are going to build. Also, in Units 1 and 2 you will setup software to help you manage the scrum process and you will start to setup your final test environment.
+
+For this unit’s Assignment, use the template found at the unit Assignment page. Make sure all areas of the template are completed. This will require you to interact with your classmates this week to form a scrum team and start to define a software product.
+
+One document will be prepared on behalf of the entire team, but everyone must participate in the development of its content. Give your team an appropriate, professional-sounding name. Each team member must send in the document by the Assignment deadline. In this course, you will have to evaluate yourself and your team members using peer evaluation forms located in Course Documents. This will be done in many units. The first evaluation will be completed in Unit 2. Based on the evaluation scores, you could potentially loose points on a unit Assignment so it is important to work with your team.
+
+Also, you must start preparing your final test platform, as it will be needed for final testing of your project. If you recall from IT481, you used virtualization software to prepare your final test system target. You can do the same here, if applicable. The final test platform does not have to be 100% complete this week but you need to get started on it in this unit. The template has a section where you will describe your final test platform. You will also supply screenshots of your final test platform as a part of the Assignment. These do not have to go in the template. It is up to you.
