@@ -14,9 +14,7 @@ import java.awt.Point;
  * Inspired by <a href="http://www.java2s.com/Code/Java/Swing-JFC/GUIinvokedfromtheeventdispatchingthread.htm">
  *                      http://www.java2s.com/Code/Java/Swing-JFC/GUIinvokedfromtheeventdispatchingthread.htm</a>
  *
- * @author Greg Chabala
- * @since Sep 29, 2010
- */
+*/
 public class Gui {
 
     private static int count = 1;
