@@ -8,9 +8,7 @@ import java.awt.Toolkit;
 
 /**
  * Helper class for using the Java Sound API.
- *
- * @author Greg Chabala
- * @since Sep 30, 2010
+
  */
 public class Tone {
     private Tone() { }
