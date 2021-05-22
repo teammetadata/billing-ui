@@ -1,4 +1,4 @@
-create database billing-ui;
+create database billing;
 
 CREATE TABLE account
 ( first_name varchar(250) NOT NULL,
