@@ -23,7 +23,7 @@ import javax.swing.border.EmptyBorder;
  * @author javaguides.net
  *
  */
-public class login extends JFrame {
+public class SampleLogin extends JFrame {
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField firstname;
@@ -41,7 +41,7 @@ public class login extends JFrame {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    login frame = new login();
+                    SampleLogin frame = new SampleLogin();
                     frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -54,7 +54,7 @@ public class login extends JFrame {
      * Create the frame.
      */
 
-    public login() {
+    public SampleLogin() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Desktop\\billing.jpg"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1014, 597);
