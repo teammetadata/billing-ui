@@ -21,6 +21,14 @@ import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JPasswordField;
+import javax.swing.JPanel;
+import com.jgoodies.forms.layout.FormSpecs;
+import javax.swing.JSplitPane;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.JSeparator;
+import java.awt.Panel;
+import javax.swing.border.TitledBorder;
 
 public class LoginWindowForm {
 
@@ -56,6 +64,7 @@ public class LoginWindowForm {
 	 */
 	private void initialize() {
 		frmMetabillpaylogin = new JFrame();
+		frmMetabillpaylogin.getContentPane().setBackground(new Color(192, 192, 192));
 		frmMetabillpaylogin.getContentPane().setForeground(Color.LIGHT_GRAY);
 		frmMetabillpaylogin.setForeground(SystemColor.desktop);
 		frmMetabillpaylogin.setTitle("MetaBillPayLogin");
@@ -67,32 +76,51 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 		
 		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(110, 290, 104, 35);
+		btnNewButton_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(100, 149, 237)));
+		btnNewButton_1.setBounds(97, 241, 108, 35);
+		btnNewButton_1.setFont(new Font("Kokonor", Font.PLAIN, 14));
 		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("Username");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel.setBounds(38, 86, 62, 14);
+		lblNewLabel.setBounds(38, 132, 62, 15);
+		lblNewLabel.setFont(new Font("Kokonor", Font.PLAIN, 12));
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Password");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(38, 159, 62, 14);
+		lblNewLabel_1.setBounds(38, 159, 62, 15);
+		lblNewLabel_1.setFont(new Font("Kokonor", Font.PLAIN, 12));
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(110, 83, 145, 20);
+		textField.setBounds(97, 129, 145, 20);
 		frmMetabillpaylogin.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("   Remember me");
-		chckbxNewCheckBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		chckbxNewCheckBox.setBounds(110, 210, 132, 23);
-		frmMetabillpaylogin.getContentPane().add(chckbxNewCheckBox);
-		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(110, 157, 145, 20);
+		passwordField.setBounds(97, 156, 145, 20);
 		frmMetabillpaylogin.getContentPane().add(passwordField);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(6, 86, 315, 20);
+		frmMetabillpaylogin.getContentPane().add(separator);
+		
+		JLabel lblNewLabel_2 = new JLabel("MetaData Utility Payment System");
+		lblNewLabel_2.setFont(new Font("Kokonor", Font.PLAIN, 15));
+		lblNewLabel_2.setBounds(38, 28, 239, 35);
+		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2);
+		
+		Panel panel = new Panel();
+		panel.setBackground(new Color(188, 143, 143));
+		panel.setBounds(29, 112, 239, 79);
+		frmMetabillpaylogin.getContentPane().add(panel);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("         Please login to view your bill");
+		lblNewLabel_2_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 10));
+		lblNewLabel_2_1.setBounds(48, 53, 172, 35);
+		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2_1);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(6, 288, 315, 20);
+		frmMetabillpaylogin.getContentPane().add(separator_1);
 	}
 }
