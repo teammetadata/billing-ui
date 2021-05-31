@@ -112,8 +112,8 @@ public class LoginWindowForm {
 		JLabel lblNewLabel_2 = new JLabel("    Utility Payment System");
 		lblNewLabel_2.setBorder(new CompoundBorder());
 		lblNewLabel_2.setBackground(new Color(128, 128, 128));
-		lblNewLabel_2.setFont(new Font("Kokonor", Font.PLAIN, 15));
-		lblNewLabel_2.setBounds(66, 28, 191, 35);
+		lblNewLabel_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(29, 23, 262, 35);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2);
 		
 		Panel panel = new Panel();
@@ -135,8 +135,8 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().add(chckbxNewCheckBox);
 		
 		JLabel lblNewLabel_3 = new JLabel("logo label");
-		lblNewLabel_3.setIcon(new ImageIcon("/Users/olukayodebankole/cha0sm0nk3y/billing-ui/billing-ui/images/logo.png"));
-		lblNewLabel_3.setBounds(0, 299, 281, 94);
+		lblNewLabel_3.setIcon(new ImageIcon(LoginWindowForm.class.getResource("/images/logo.png")));
+		lblNewLabel_3.setBounds(29, 288, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 		
 		
