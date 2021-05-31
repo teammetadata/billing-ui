@@ -23,10 +23,10 @@ public class BillPayment {
 	private JFrame frmMetabillpaylogin;
 	private JTextField textField;
 	private JPasswordField passwordField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JPasswordField passwordField_1;
+	private JPasswordField passwordField_2;
+	private JPasswordField passwordField_3;
+	private JPasswordField passwordField_4;
 
 	/**
 	 * Launch the application.
@@ -70,7 +70,7 @@ public class BillPayment {
 		JButton btnNewButton_1 = new JButton("Pay Bill");
 		btnNewButton_1.setBackground(new Color(238, 232, 170));
 		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_1.setBounds(486, 185, 124, 35);
+		btnNewButton_1.setBounds(486, 185, 124, 57);
 		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 14));
 		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
@@ -85,38 +85,32 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(97, 129, 145, 20);
+		textField.setBounds(76, 128, 153, 20);
 		frmMetabillpaylogin.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(100, 159, 142, 20);
+		passwordField.setBounds(86, 155, 141, 20);
 		frmMetabillpaylogin.getContentPane().add(passwordField);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(6, 86, 315, 20);
+		separator.setBounds(6, 86, 621, 20);
 		frmMetabillpaylogin.getContentPane().add(separator);
 		
 		JLabel lblNewLabel_2 = new JLabel("    Utility Payment System");
 		lblNewLabel_2.setBorder(new CompoundBorder());
 		lblNewLabel_2.setBackground(new Color(128, 128, 128));
 		lblNewLabel_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(146, 18, 262, 35);
+		lblNewLabel_2.setBounds(161, 18, 262, 35);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2);
-		
-		Panel panel = new Panel();
-		panel.setEnabled(false);
-		panel.setBackground(new Color(192, 192, 192));
-		panel.setBounds(16, 96, 454, 172);
-		frmMetabillpaylogin.getContentPane().add(panel);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Billing Details");
 		lblNewLabel_2_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 13));
-		lblNewLabel_2_1.setBounds(232, 47, 103, 20);
+		lblNewLabel_2_1.setBounds(249, 46, 103, 20);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2_1);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(6, 288, 315, 20);
+		separator_1.setBounds(6, 288, 621, 20);
 		frmMetabillpaylogin.getContentPane().add(separator_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("logo label");
@@ -124,49 +118,47 @@ public class BillPayment {
 		lblNewLabel_3.setBounds(167, 299, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(97, 188, 130, 26);
-		frmMetabillpaylogin.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(99, 226, 80, 16);
-		frmMetabillpaylogin.getContentPane().add(textPane);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("Acct #");
+		JLabel lblNewLabel_1_1 = new JLabel("Electric Usage:");
 		lblNewLabel_1_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_1.setBounds(38, 193, 50, 15);
+		lblNewLabel_1_1.setBounds(38, 185, 90, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Acct #");
 		lblNewLabel_1_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_2.setBounds(38, 227, 50, 15);
+		lblNewLabel_1_2.setBounds(27, 72, 50, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_2);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("Acct #");
+		JLabel lblNewLabel_1_3 = new JLabel("Amount Due:");
 		lblNewLabel_1_3.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_3.setBounds(271, 130, 50, 15);
+		lblNewLabel_1_3.setBounds(271, 130, 81, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_3);
 		
-		JLabel lblNewLabel_1_4 = new JLabel("Acct #");
+		JLabel lblNewLabel_1_4 = new JLabel("Payment Date");
 		lblNewLabel_1_4.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_4.setBounds(271, 157, 50, 15);
+		lblNewLabel_1_4.setBounds(271, 157, 81, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_4);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(320, 128, 145, 20);
-		frmMetabillpaylogin.getContentPane().add(textField_2);
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(127, 181, 102, 20);
+		frmMetabillpaylogin.getContentPane().add(passwordField_1);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(320, 152, 145, 20);
-		frmMetabillpaylogin.getContentPane().add(textField_3);
+		passwordField_2 = new JPasswordField();
+		passwordField_2.setBounds(76, 68, 90, 20);
+		frmMetabillpaylogin.getContentPane().add(passwordField_2);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(476, 96, 145, 20);
-		frmMetabillpaylogin.getContentPane().add(textField_4);
+		passwordField_3 = new JPasswordField();
+		passwordField_3.setBounds(351, 125, 97, 20);
+		frmMetabillpaylogin.getContentPane().add(passwordField_3);
+		
+		passwordField_4 = new JPasswordField();
+		passwordField_4.setBounds(351, 154, 97, 20);
+		frmMetabillpaylogin.getContentPane().add(passwordField_4);
+		
+		Panel panel = new Panel();
+		panel.setEnabled(false);
+		panel.setBackground(new Color(192, 192, 192));
+		panel.setBounds(16, 96, 445, 186);
+		frmMetabillpaylogin.getContentPane().add(panel);
 		
 		
 	}
