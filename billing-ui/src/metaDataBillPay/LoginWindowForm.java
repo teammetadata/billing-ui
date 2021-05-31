@@ -1,37 +1,20 @@
 package metaDataBillPay;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
-import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import javax.swing.JPanel;
-import com.jgoodies.forms.layout.FormSpecs;
-import javax.swing.JSplitPane;
-import java.awt.Component;
-import javax.swing.Box;
 import javax.swing.JSeparator;
 import java.awt.Panel;
-import javax.swing.border.TitledBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.EtchedBorder;
 import javax.swing.border.CompoundBorder;
 
 public class LoginWindowForm {
@@ -82,7 +65,7 @@ public class LoginWindowForm {
 		JButton btnNewButton_1 = new JButton("Login");
 		btnNewButton_1.setBackground(new Color(238, 232, 170));
 		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_1.setBounds(97, 241, 108, 35);
+		btnNewButton_1.setBounds(97, 241, 128, 35);
 		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 14));
 		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
