@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import java.awt.Color;
@@ -16,11 +17,13 @@ import java.awt.Panel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.CompoundBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LoginWindowForm {
 
 	private JFrame frmMetabillpaylogin;
-	private JTextField textField;
+	private JTextField usernameField;
 	private JPasswordField passwordField;
 
 	/**
@@ -29,12 +32,18 @@ public class LoginWindowForm {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try 
+				{
 					LoginWindowForm window = new LoginWindowForm();
 					window.frmMetabillpaylogin.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+					
+					
+				} 
+				  catch (Exception e) // Exception catching path
+	            {
+	            	JOptionPane.showMessageDialog(null, "ERROR#5 Unexpected error occured. Please contact your system "
+	            								  + "adminstration for addtional help at 1-800-123-4567.");
+	            }
 			}
 		});
 	}
@@ -62,12 +71,46 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setBackground(new Color(238, 232, 170));
-		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_1.setBounds(97, 241, 128, 35);
-		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 14));
-		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
+		// ************************************************************************************************************
+		// ************************************ Login Button Functionality ********************************************
+		// ************************************************************************************************************
+		
+		JButton loginButton = new JButton("Login");
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				{
+
+		            // Make sure that inputs are not NULL 
+					String pwd = new String(passwordField.getPassword()); // Pwd field needs to be converted
+		            if (!usernameField.getText().isEmpty() && !pwd.isEmpty())
+		            {
+		                Business_Layer logic = new Business_Layer();
+		                Boolean result = logic.GetLoginInfo(usernameField.getText(), pwd);
+
+		                if (result == true)
+		                {
+		                	JOptionPane.showMessageDialog(null, "Login Successful.");
+		                }
+		                else
+		                {
+		                	JOptionPane.showMessageDialog(null, "Invalid username and password combination. "
+		                								  + "Please try again.");
+		                }
+		            }
+		            else // Path if 1 or more fields are left NULL 
+		            {
+		            	JOptionPane.showMessageDialog(null, "Please fill out all empty fields.");
+		            }
+
+		        }
+			}
+		});
+		loginButton.setBackground(new Color(238, 232, 170));
+		loginButton.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		loginButton.setBounds(97, 241, 128, 35);
+		loginButton.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 14));
+		frmMetabillpaylogin.getContentPane().add(loginButton);
 		
 		JLabel lblNewLabel = new JLabel("Username");
 		lblNewLabel.setBounds(38, 132, 62, 15);
@@ -79,10 +122,10 @@ public class LoginWindowForm {
 		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1);
 		
-		textField = new JTextField();
-		textField.setBounds(97, 129, 145, 20);
-		frmMetabillpaylogin.getContentPane().add(textField);
-		textField.setColumns(10);
+		usernameField = new JTextField();
+		usernameField.setBounds(97, 129, 145, 20);
+		frmMetabillpaylogin.getContentPane().add(usernameField);
+		usernameField.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBounds(97, 156, 145, 20);
