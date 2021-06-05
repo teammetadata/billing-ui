@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JCheckBox;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.SystemColor;
@@ -16,10 +15,13 @@ import java.awt.Panel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.CompoundBorder;
+<<<<<<< HEAD
 import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
+=======
+>>>>>>> c591f92b31b7a7b1f665ec7956af79bdd77b0813
 
 public class BillPayment {
 
