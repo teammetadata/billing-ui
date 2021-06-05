@@ -104,7 +104,7 @@ public class BillPayment {
 		
 		JLabel lblNewLabel_3 = new JLabel("logo label");
 		lblNewLabel_3.setIcon(new ImageIcon(BillPayment.class.getResource("/images/logo.png")));
-		lblNewLabel_3.setBounds(167, 299, 281, 94);
+		lblNewLabel_3.setBounds(167, 287, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Balance Due               $");
