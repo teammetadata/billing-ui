@@ -15,13 +15,14 @@ import java.awt.Panel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.CompoundBorder;
-<<<<<<< HEAD
 import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
-=======
->>>>>>> c591f92b31b7a7b1f665ec7956af79bdd77b0813
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class BillPayment {
 
@@ -185,6 +186,17 @@ public class BillPayment {
 		passwordField_5.setBounds(364, 176, 97, 20);
 		frmMetabillpaylogin.getContentPane().add(passwordField_5);
 		
+		Panel panel = new Panel();
+		panel.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+			}
+		});
+		panel.setFocusTraversalKeysEnabled(false);
+		panel.setBounds(10, 144, 459, 107);
+		frmMetabillpaylogin.getContentPane().add(panel);
+		panel.setLayout(null);
+		
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBackground(new Color(224, 255, 255));
 		textArea_2.setBounds(98, 98, 142, 16);
@@ -194,13 +206,6 @@ public class BillPayment {
 		textArea_3.setBackground(new Color(224, 255, 255));
 		textArea_3.setBounds(165, 121, 75, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_3);
-		
-		Panel panel_1 = new Panel();
-		panel_1.setForeground(new Color(147, 112, 219));
-		panel_1.setEnabled(false);
-		panel_1.setBackground(Color.LIGHT_GRAY);
-		panel_1.setBounds(3, 144, 476, 100);
-		frmMetabillpaylogin.getContentPane().add(panel_1);
 		
 		
 	}
