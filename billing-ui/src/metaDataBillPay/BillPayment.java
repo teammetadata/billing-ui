@@ -21,8 +21,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class BillPayment {
 
@@ -114,9 +112,9 @@ public class BillPayment {
 		lblNewLabel_1_1.setBounds(16, 123, 72, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Acct #");
+		JLabel lblNewLabel_1_2 = new JLabel("Account #");
 		lblNewLabel_1_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_2.setBounds(16, 69, 50, 15);
+		lblNewLabel_1_2.setBounds(16, 69, 69, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Payment Due Date");
@@ -187,15 +185,19 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(passwordField_5);
 		
 		Panel panel = new Panel();
-		panel.addFocusListener(new FocusAdapter() {
-			@Override
-			public void focusGained(FocusEvent e) {
-			}
-		});
 		panel.setFocusTraversalKeysEnabled(false);
 		panel.setBounds(10, 144, 459, 107);
 		frmMetabillpaylogin.getContentPane().add(panel);
-		panel.setLayout(null);
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 459, Short.MAX_VALUE)
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 107, Short.MAX_VALUE)
+		);
+		panel.setLayout(gl_panel);
 		
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBackground(new Color(224, 255, 255));
