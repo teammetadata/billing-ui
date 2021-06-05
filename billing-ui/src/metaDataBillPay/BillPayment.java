@@ -90,12 +90,12 @@ public class BillPayment {
 		lblNewLabel_2.setBorder(new CompoundBorder());
 		lblNewLabel_2.setBackground(new Color(128, 128, 128));
 		lblNewLabel_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(161, 18, 262, 35);
+		lblNewLabel_2.setBounds(167, 6, 262, 35);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Billing Details");
 		lblNewLabel_2_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 13));
-		lblNewLabel_2_1.setBounds(249, 46, 103, 20);
+		lblNewLabel_2_1.setBounds(248, 36, 103, 20);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2_1);
 		
 		JSeparator separator_1 = new JSeparator();
@@ -107,9 +107,9 @@ public class BillPayment {
 		lblNewLabel_3.setBounds(167, 299, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Balance Due                     $");
-		lblNewLabel_1_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_1.setBounds(16, 123, 142, 15);
+		JLabel lblNewLabel_1_1 = new JLabel("Balance Due               $");
+		lblNewLabel_1_1.setFont(new Font("Kohinoor Bangla", Font.BOLD, 12));
+		lblNewLabel_1_1.setBounds(402, 100, 125, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Account #");
@@ -123,8 +123,8 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_3);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBackground(new Color(30, 144, 255));
-		separator.setBounds(0, 86, 627, 30);
+		separator.setBackground(Color.BLACK);
+		separator.setBounds(0, 53, 627, 30);
 		frmMetabillpaylogin.getContentPane().add(separator);
 		
 		JComboBox comboBox = new JComboBox();
@@ -135,12 +135,12 @@ public class BillPayment {
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setBackground(new Color(224, 255, 255));
-		textArea.setBounds(98, 67, 142, 16);
+		textArea.setBounds(81, 67, 142, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea);
 		
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setBackground(new Color(224, 255, 255));
-		textArea_1.setBounds(523, 67, 81, 16);
+		textArea_1.setBounds(528, 67, 81, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_1);
 		
 		JLabel lblNewLabel_1_6 = new JLabel("Card Card #");
@@ -172,7 +172,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(passwordField_3);
 		
 		JSeparator separator_2 = new JSeparator();
-		separator_2.setBackground(new Color(30, 144, 255));
+		separator_2.setBackground(Color.BLACK);
 		separator_2.setBounds(0, 257, 627, 30);
 		frmMetabillpaylogin.getContentPane().add(separator_2);
 		
@@ -205,12 +205,12 @@ public class BillPayment {
 		
 		JTextArea textArea_2 = new JTextArea();
 		textArea_2.setBackground(new Color(224, 255, 255));
-		textArea_2.setBounds(98, 98, 142, 16);
+		textArea_2.setBounds(81, 98, 142, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_2);
 		
 		JTextArea textArea_3 = new JTextArea();
 		textArea_3.setBackground(new Color(224, 255, 255));
-		textArea_3.setBounds(159, 121, 81, 16);
+		textArea_3.setBounds(528, 98, 81, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_3);
 		
 		
