@@ -73,7 +73,7 @@ public class BillPayment {
 		btnNewButton_1.setBackground(new Color(238, 232, 170));
 		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_1.setBounds(485, 159, 124, 57);
-		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 14));
+		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.BOLD, 16));
 		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("Full Name");
@@ -99,7 +99,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_2_1);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(0, 288, 627, 20);
+		separator_1.setBounds(0, 270, 627, 20);
 		frmMetabillpaylogin.getContentPane().add(separator_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("logo label");
@@ -107,9 +107,9 @@ public class BillPayment {
 		lblNewLabel_3.setBounds(167, 299, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Balance Due");
+		JLabel lblNewLabel_1_1 = new JLabel("Balance Due                     $");
 		lblNewLabel_1_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_1.setBounds(16, 123, 72, 15);
+		lblNewLabel_1_1.setBounds(16, 123, 142, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Account #");
@@ -167,10 +167,6 @@ public class BillPayment {
 		passwordField.setBounds(82, 176, 158, 25);
 		frmMetabillpaylogin.getContentPane().add(passwordField);
 		
-		passwordField_2 = new JPasswordField();
-		passwordField_2.setBounds(82, 206, 158, 25);
-		frmMetabillpaylogin.getContentPane().add(passwordField_2);
-		
 		passwordField_3 = new JPasswordField();
 		passwordField_3.setBounds(364, 203, 97, 20);
 		frmMetabillpaylogin.getContentPane().add(passwordField_3);
@@ -188,14 +184,22 @@ public class BillPayment {
 		panel.setFocusTraversalKeysEnabled(false);
 		panel.setBounds(10, 144, 459, 107);
 		frmMetabillpaylogin.getContentPane().add(panel);
+		
+		passwordField_2 = new JPasswordField();
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 459, Short.MAX_VALUE)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(73)
+					.addComponent(passwordField_2, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(337, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 107, Short.MAX_VALUE)
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap(62, Short.MAX_VALUE)
+					.addComponent(passwordField_2, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addGap(20))
 		);
 		panel.setLayout(gl_panel);
 		
@@ -206,7 +210,7 @@ public class BillPayment {
 		
 		JTextArea textArea_3 = new JTextArea();
 		textArea_3.setBackground(new Color(224, 255, 255));
-		textArea_3.setBounds(165, 121, 75, 16);
+		textArea_3.setBounds(159, 121, 81, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_3);
 		
 		
