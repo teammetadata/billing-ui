@@ -27,6 +27,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class BillPayment {
 
@@ -179,10 +180,17 @@ public class BillPayment {
 		passwordField_5.setBounds(364, 176, 97, 20);
 		frmMetabillpaylogin.getContentPane().add(passwordField_5);
 		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBorder(new LineBorder(Color.GRAY));
+		panel_2.setBackground(Color.LIGHT_GRAY);
+		panel_2.setBounds(4, 126, 471, 131);
+		frmMetabillpaylogin.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
+		
 		Panel panel = new Panel();
+		panel.setBounds(6, 18, 459, 107);
+		panel_2.add(panel);
 		panel.setFocusTraversalKeysEnabled(false);
-		panel.setBounds(10, 144, 459, 107);
-		frmMetabillpaylogin.getContentPane().add(panel);
 		
 		passwordField_2 = new JPasswordField();
 		GroupLayout gl_panel = new GroupLayout(panel);
