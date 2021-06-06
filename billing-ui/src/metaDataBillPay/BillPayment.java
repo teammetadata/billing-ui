@@ -3,7 +3,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.SystemColor;
@@ -15,12 +14,13 @@ import java.awt.Panel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.CompoundBorder;
-import javax.swing.JTextPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextArea;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class BillPayment {
 
@@ -69,13 +69,21 @@ public class BillPayment {
 		frmMetabillpaylogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("Submit Payment");
-		btnNewButton_1.setToolTipText("Click to pay!");
-		btnNewButton_1.setBackground(Color.ORANGE);
-		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton_1.setBounds(485, 159, 124, 57);
-		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.BOLD, 13));
-		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
+		JButton btnNewButton = new JButton("Submit Payment");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+		});
+		btnNewButton.setToolTipText("Click to pay!");
+		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton.setBounds(485, 159, 124, 57);
+		btnNewButton.setFont(new Font("Kohinoor Bangla", Font.BOLD, 13));
+		frmMetabillpaylogin.getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel = new JLabel("Full Name");
 		lblNewLabel.setBounds(16, 100, 62, 15);
@@ -125,7 +133,7 @@ public class BillPayment {
 		
 		JSeparator separator = new JSeparator();
 		separator.setBackground(Color.BLACK);
-		separator.setBounds(0, 53, 627, 30);
+		separator.setBounds(0, 53, 627, 9);
 		frmMetabillpaylogin.getContentPane().add(separator);
 		
 		JComboBox comboBox = new JComboBox();
@@ -213,6 +221,10 @@ public class BillPayment {
 		textArea_3.setBackground(new Color(224, 255, 255));
 		textArea_3.setBounds(528, 98, 81, 16);
 		frmMetabillpaylogin.getContentPane().add(textArea_3);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(501, 336, 117, 29);
+		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
 		
 	}
