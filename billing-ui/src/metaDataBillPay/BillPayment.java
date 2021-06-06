@@ -69,11 +69,12 @@ public class BillPayment {
 		frmMetabillpaylogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 		
-		JButton btnNewButton_1 = new JButton("Pay Bill");
-		btnNewButton_1.setBackground(new Color(238, 232, 170));
+		JButton btnNewButton_1 = new JButton("Submit Payment");
+		btnNewButton_1.setToolTipText("Click to pay!");
+		btnNewButton_1.setBackground(Color.ORANGE);
 		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton_1.setBounds(485, 159, 124, 57);
-		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.BOLD, 16));
+		btnNewButton_1.setFont(new Font("Kohinoor Bangla", Font.BOLD, 13));
 		frmMetabillpaylogin.getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel = new JLabel("Full Name");
