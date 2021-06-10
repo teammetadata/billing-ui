@@ -18,14 +18,16 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.CompoundBorder;
 import java.awt.event.ActionListener;
+import java.util.prefs.Preferences;
 import java.awt.event.ActionEvent;
 
 public class LoginWindowForm {
 
-	private JFrame frmMetabillpaylogin;
-	private JTextField usernameField;
-	private JPasswordField passwordField;
-
+	public JFrame frmMetabillpaylogin;
+	public JTextField usernameField;
+	public JPasswordField passwordField;
+	public JCheckBox remember;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -36,7 +38,6 @@ public class LoginWindowForm {
 				{
 					LoginWindowForm window = new LoginWindowForm();
 					window.frmMetabillpaylogin.setVisible(true);
-					
 					
 				} 
 				  catch (Exception e) // Exception catching path
@@ -53,8 +54,26 @@ public class LoginWindowForm {
 	 */
 	public LoginWindowForm() {
 		initialize();
+		rememberMe();
 	}
-
+	
+	// Initialize variables for remember me function 
+	Preferences preference;
+	boolean rememberPreference;
+	
+	public void rememberMe() {
+		
+		// Get the preference of the rememberMe preference
+		preference = Preferences.userNodeForPackage(this.getClass());
+		// Check if the check box was selected/clicked
+		rememberPreference = preference.getBoolean("Remember me", Boolean.valueOf(""));
+		if (rememberPreference) {
+			// If statement to replace the username & pwd fields with last login credentials
+			usernameField.setText(preference.get("Username", ""));
+			passwordField.setText(preference.get("Password", ""));
+			remember.setSelected(rememberPreference);
+		}
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -74,22 +93,35 @@ public class LoginWindowForm {
 		// ************************************************************************************************************
 		// ************************************ Login Button Functionality ********************************************
 		// ************************************************************************************************************
-		
 		JButton loginButton = new JButton("Login");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
 				{
-
 		            // Make sure that inputs are not NULL 
 					String pwd = new String(passwordField.getPassword()); // Pwd field needs to be converted
 		            if (!usernameField.getText().isEmpty() && !pwd.isEmpty())
-		            {
+		            {   
 		                Business_Layer logic = new Business_Layer();
 		                Boolean result = logic.GetLoginInfo(usernameField.getText(), pwd);
-
+		                
 		                if (result == true)
 		                {
+					    	if (remember.isSelected() && !rememberPreference)
+				             {
+					    		// Insert into the preference the user name
+				                preference.put("Username", usernameField.getText());
+				                preference.put("Password", pwd);
+				                preference.putBoolean("Remember me",  true);
+				              }
+				            else if (!remember.isSelected() && rememberPreference)
+				            {
+				                // Insert into the preference the user name
+				                preference.put("Username", "");
+				                preference.put("Password", "");
+				                preference.putBoolean("remember me",  false);
+				            }
+					    	  
 		                	JOptionPane.showMessageDialog(null, "Login Successful.");
 		                }
 		                else
@@ -156,15 +188,14 @@ public class LoginWindowForm {
 		separator_1.setBounds(6, 288, 315, 20);
 		frmMetabillpaylogin.getContentPane().add(separator_1);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("Remember me");
-		chckbxNewCheckBox.setBounds(81, 195, 128, 23);
-		frmMetabillpaylogin.getContentPane().add(chckbxNewCheckBox);
+		remember = new JCheckBox("Remember me");
+		remember.setBounds(81, 195, 128, 23);
+		frmMetabillpaylogin.getContentPane().add(remember);
 		
 		JLabel lblNewLabel_3 = new JLabel("logo label");
 		lblNewLabel_3.setIcon(new ImageIcon(LoginWindowForm.class.getResource("/images/logo.png")));
 		lblNewLabel_3.setBounds(29, 288, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
-		
 		
 	}
 }
