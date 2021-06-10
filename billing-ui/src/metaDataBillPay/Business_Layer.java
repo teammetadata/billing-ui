@@ -15,7 +15,6 @@ public class Business_Layer {
             String username = user;
             String password = pwd;
             
-//            JOptionPane.showMessageDialog(null, user + " " + pwd.toString());
             Database_SQLQueries db = new Database_SQLQueries();
             try
             {
@@ -39,6 +38,7 @@ public class Business_Layer {
             return false;
 
         }
+        
         
 
 }
