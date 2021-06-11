@@ -119,7 +119,7 @@ public class LoginWindowForm {
 				                // Insert into the preference the user name
 				                preference.put("Username", "");
 				                preference.put("Password", "");
-				                preference.putBoolean("remember me",  false);
+				                preference.putBoolean("Remember me",  false);
 				            }
 					    	  
 		                	JOptionPane.showMessageDialog(null, "Login Successful.");
