@@ -7,10 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
-import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class PaymentConfirmationForm {
 
@@ -59,9 +56,11 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
 		
 		JLabel lblNewLabel = new JLabel("Account Number");
+		lblNewLabel.setBounds(16, 51, 121, 14);
 		lblNewLabel.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		txtXxxxxxxx = new JTextField();
+		txtXxxxxxxx.setBounds(162, 49, 101, 20);
 		txtXxxxxxxx.setBackground(Color.WHITE);
 		txtXxxxxxxx.setEditable(false);
 		txtXxxxxxxx.setHorizontalAlignment(SwingConstants.LEFT);
@@ -69,9 +68,11 @@ public class PaymentConfirmationForm {
 		txtXxxxxxxx.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Remaining Act Balance");
+		lblNewLabel_1.setBounds(16, 76, 136, 14);
 		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		textField_1 = new JTextField();
+		textField_1.setBounds(162, 74, 55, 20);
 		textField_1.setBackground(Color.WHITE);
 		textField_1.setEditable(false);
 		textField_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -79,9 +80,11 @@ public class PaymentConfirmationForm {
 		textField_1.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Customer Name");
+		lblNewLabel_2.setBounds(16, 26, 104, 14);
 		lblNewLabel_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		textField_2 = new JTextField();
+		textField_2.setBounds(162, 24, 157, 20);
 		textField_2.setHorizontalAlignment(SwingConstants.LEFT);
 		textField_2.setEditable(false);
 		textField_2.setBackground(Color.WHITE);
@@ -89,9 +92,11 @@ public class PaymentConfirmationForm {
 		lblNewLabel_2.setBackground(new Color(0, 0, 0));
 		
 		JLabel lblNewLabel_3 = new JLabel("Payment Confirmation #");
+		lblNewLabel_3.setBounds(16, 102, 147, 14);
 		lblNewLabel_3.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		textField_3 = new JTextField();
+		textField_3.setBounds(162, 128, 104, 20);
 		textField_3.setBackground(Color.WHITE);
 		textField_3.setEditable(false);
 		textField_3.setText("$67.83");
@@ -99,18 +104,22 @@ public class PaymentConfirmationForm {
 		textField_3.setColumns(10);
 		
 		JLabel lblNewLabel_4 = new JLabel("Payment Amount");
+		lblNewLabel_4.setBounds(16, 127, 121, 14);
 		lblNewLabel_4.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		textField_4 = new JTextField();
+		textField_4.setBounds(162, 153, 86, 20);
 		textField_4.setBackground(Color.WHITE);
 		textField_4.setEditable(false);
 		textField_4.setText("01/01/2021");
 		textField_4.setColumns(10);
 		
 		JLabel lblNewLabel_5 = new JLabel("Payment Date");
+		lblNewLabel_5.setBounds(16, 152, 82, 14);
 		lblNewLabel_5.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		
 		textField_5 = new JTextField();
+		textField_5.setBounds(162, 100, 147, 20);
 		textField_5.setBackground(Color.WHITE);
 		textField_5.setEditable(false);
 		textField_5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -118,103 +127,27 @@ public class PaymentConfirmationForm {
 		textField_5.setColumns(10);
 		
 		lblNewLabel_6 = new JLabel("Thank you for your payment.");
+		lblNewLabel_6.setBounds(129, 193, 224, 49);
 		lblNewLabel_6.setFont(new Font("Dialog", Font.BOLD, 14));
 		
 		JButton btnNewButton = new JButton("Sign Out");
+		btnNewButton.setBounds(340, 7, 89, 23);
 		btnNewButton.setBackground(Color.ORANGE);
-		GroupLayout groupLayout = new GroupLayout(PaymentConfirmation.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-							.addGap(42)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 157, GroupLayout.PREFERRED_SIZE)
-							.addGap(21)
-							.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)
-							.addGap(25)
-							.addComponent(txtXxxxxxxx, GroupLayout.PREFERRED_SIZE, 101, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
-							.addGap(10)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-								.addGroup(groupLayout.createSequentialGroup()
-									.addGap(146)
-									.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
-								.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE)
-							.addGap(25)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(16)
-							.addComponent(lblNewLabel_5, GroupLayout.PREFERRED_SIZE, 82, GroupLayout.PREFERRED_SIZE)
-							.addGap(64)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(129)
-							.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)))
-					.addGap(5))
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(7)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(19)
-							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(17)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
-						.addComponent(btnNewButton))
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(7)
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(5)
-							.addComponent(txtXxxxxxxx, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(7)
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(5)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(2)
-							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addGap(7)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(1)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(4)
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_5, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addGap(1)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-					.addGap(20)
-					.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE))
-		);
-		PaymentConfirmation.getContentPane().setLayout(groupLayout);
+		PaymentConfirmation.getContentPane().setLayout(null);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_2);
+		PaymentConfirmation.getContentPane().add(textField_2);
+		PaymentConfirmation.getContentPane().add(btnNewButton);
+		PaymentConfirmation.getContentPane().add(lblNewLabel);
+		PaymentConfirmation.getContentPane().add(txtXxxxxxxx);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_1);
+		PaymentConfirmation.getContentPane().add(textField_1);
+		PaymentConfirmation.getContentPane().add(textField_5);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_3);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_4);
+		PaymentConfirmation.getContentPane().add(textField_3);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_5);
+		PaymentConfirmation.getContentPane().add(textField_4);
+		PaymentConfirmation.getContentPane().add(lblNewLabel_6);
 	}
 }
 
