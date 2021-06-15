@@ -42,7 +42,7 @@ public class LoginWindowForm {
 				} 
 				  catch (Exception e) // Exception catching path
 	            {
-	            	JOptionPane.showMessageDialog(null, "ERROR#5 Unexpected error occured. Please contact your system "
+	            	JOptionPane.showMessageDialog(null, "ERROR# 4: Unexpected error occured. Please contact your system "
 	            								  + "adminstration for addtional help at 1-800-123-4567.");
 	            }
 			}
