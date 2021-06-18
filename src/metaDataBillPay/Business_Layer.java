@@ -16,15 +16,20 @@ public class Business_Layer {
 		String password = pwd;
 
 		Database_SQLQueries db = new Database_SQLQueries();
-		try {
+		try 
+		{
 			// Use DB login confirmation method to see if login was successful or not
 			Boolean result = db.LoginConfirmation(username, password);
-			if (result == true) {
+			if (result == true) 
+			{
 				return true;
-			} else {
+			} 
+			else 
+			{
 				return false;
 			}
-		} catch (Exception e) // Exception catching path
+		} 
+		catch (Exception e) // Exception catching path
 		{
 			JOptionPane.showMessageDialog(null, "ERROR# 3: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
@@ -43,15 +48,20 @@ public class Business_Layer {
 		String expirationDate = date;
 
 		Database_SQLQueries db = new Database_SQLQueries();
-		try {
+		try 
+		{
 			// Use DB login confirmation method to see if login was successful or not
 			Boolean result = db.CardVerification(cardType, cardNumber, cardCVV, zipCode, expirationDate);
-			if (result == true) {
+			if (result == true) 
+			{
 				return true;
-			} else {
+			} 
+			else 
+			{
 				return false;
 			}
-		} catch (Exception e) // Exception catching path
+		} 
+		catch (Exception e) // Exception catching path
 		{
 			JOptionPane.showMessageDialog(null, "ERROR# 3b: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
