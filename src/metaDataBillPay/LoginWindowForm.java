@@ -106,14 +106,17 @@ public class LoginWindowForm {
 					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) {
 						Business_Layer logic = new Business_Layer();
 						Boolean result = logic.GetLoginInfo(usernameField.getText(), pwd);
-
+						
+						// Path if login was successful and rememeberMe method is checked
 						if (result == true) {
 							if (remember.isSelected() && !rememberPreference) {
 								// Insert into the preference the user name
 								preference.put("Username", usernameField.getText());
 								preference.put("Password", pwd);
 								preference.putBoolean("Remember me", true);
-							} else if (!remember.isSelected() && rememberPreference) {
+							} 
+							// RemeberMe method is not selected  
+							else if (!remember.isSelected() && rememberPreference) {
 								// Insert into the preference the user name
 								preference.put("Username", "");
 								preference.put("Password", "");
@@ -121,7 +124,9 @@ public class LoginWindowForm {
 							}
 
 							JOptionPane.showMessageDialog(null, "Login Successful.");
-						} else {
+						} 
+						else // Invalid username/password combination path
+						{
 							JOptionPane.showMessageDialog(null,
 									"Invalid username and password combination. " + "Please try again.");
 						}
