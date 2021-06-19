@@ -1,4 +1,4 @@
-package metadatabillpay;
+package metaDataBillPay;
 
 import java.awt.Color;
 import java.awt.EventQueue;

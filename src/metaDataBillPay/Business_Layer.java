@@ -1,4 +1,4 @@
-package metadatabillpay;
+package metaDataBillPay;
 
 import javax.swing.JOptionPane;
 
