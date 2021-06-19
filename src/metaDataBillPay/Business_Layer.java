@@ -34,10 +34,9 @@ public class Business_Layer {
 			JOptionPane.showMessageDialog(null, "ERROR# 3: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
 		}
-
 		return false;
-
 	}
+	
 	public Boolean CardInfoVerification(String type, String number, String code, String zip, String date) {
 		// Get card info from GUI
 		String cardType = type;
@@ -65,8 +64,32 @@ public class Business_Layer {
 			JOptionPane.showMessageDialog(null, "ERROR# 3b: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
 		}
-
 		return false;
 	}
 
+//	public Boolean PaymentSubmissionAndUpdate(float payment) {
+//		// Get payment amount
+//		float paymentAmount = payment;
+//
+//		Database_SQLQueries db = new Database_SQLQueries();
+//		try 
+//		{
+//			// Use DB payment method to update payment amount into the DB 
+//			Boolean result = db.PaymentUpdate(float paymentAmount);
+//			if (result == true) 
+//			{
+//				return true;
+//			} 
+//			else 
+//			{
+//				return false;
+//			}
+//		} 
+//		catch (Exception e) // Exception catching path
+//		{
+//			JOptionPane.showMessageDialog(null, "ERROR# 3c: Unexpected error occured. Please contact your system "
+//					+ "adminstration for addtional help at 1-800-123-4567.");
+//		}
+//		return false;
+//	}
 }

@@ -111,4 +111,55 @@ public class Database_SQLQueries {
 		return false;
 	}
 
+//	public Boolean PaymentUpdate(float paymentAmount) {
+//		// Create an command procedure to insert SQL statement into
+//				// Get a result set containing all data from test_table
+//				DatabaseConnection testConnection = new DatabaseConnection();
+//				Connection connection = null;
+//				try 
+//				{
+//					if (testConnection.DBConnection().booleanValue() == true) // Validate Connection to DB
+//					{
+//						connection = DriverManager.getConnection(testConnection.dbURL, testConnection.username,
+//								testConnection.password);
+//						try 
+//						{
+//							// Get a result set containing card information
+//							String query = "Update customersInformation Set Balance='" + Balance
+//									"Select Balance FROM customersInformation Where cardType='"
+//									+ type + "' and cardNumber='" + number + "' and cardCVV='" + code + "' and zipCode='" + zip
+//									+ "' and expirationDate='" + date + "'";
+//							PreparedStatement preparedStatement = connection.prepareStatement(query);
+//							ResultSet results = preparedStatement.executeQuery();
+//							if (results.next()) 
+//							{
+//								return true; // Returns true is the card info matches
+//							} 
+//							else 
+//							{
+//								return false; // Cursor positioned after the last row
+//							}
+//						} 
+//						catch (Exception e) // Exception catching path for any SQL Exceptions or ResultSets Retrieval
+//						{
+//							JOptionPane.showMessageDialog(null, "ERROR# 2.2b: Unexpected error occurred. Please contact your"
+//									+ " system administration for additional help at 1-800-123-4567.");
+//						}
+//					} 
+//					else // DB connection issues path
+//					{
+//						JOptionPane.showMessageDialog(null, "ERROR# 2.1b: Unexpected error occured. Please contact your "
+//								+ "system adminstration for addtional help at 1-800-123-4567.");
+//						return false;
+//					}
+//				} 
+//				catch (Exception e) // Exception catching path for DB Connection Error
+//				{
+//					JOptionPane.showMessageDialog(null, "ERROR# 2.0b: Unexpected error occured. Please contact your system "
+//							+ "adminstration for addtional help at 1-800-123-4567.");
+//					return false;
+//				}
+//				return false;
+//	}
+
 }
