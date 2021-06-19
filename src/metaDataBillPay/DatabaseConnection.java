@@ -1,4 +1,4 @@
-package metaDataBillPay;
+package metadatabillpay;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
