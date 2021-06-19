@@ -191,7 +191,7 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().add(remember);
 
 		JLabel lblNewLabel_3 = new JLabel("logo label");
-		lblNewLabel_3.setIcon(new ImageIcon(LoginWindowForm.class.getResource("/images/logo.png")));
+		lblNewLabel_3.setIcon(new ImageIcon("C:/Users/Canal/git/billing-ui/artifacts/logo.png"));
 		lblNewLabel_3.setBounds(29, 288, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 
