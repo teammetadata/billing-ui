@@ -67,6 +67,7 @@ public class Database_SQLQueries {
 		// Get a result set containing all data from test_table
 		DatabaseConnection testConnection = new DatabaseConnection();
 		Connection connection = null;
+		
 		try 
 		{
 			if (testConnection.DBConnection().booleanValue() == true) // Validate Connection to DB

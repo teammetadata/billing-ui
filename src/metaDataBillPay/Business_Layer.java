@@ -38,7 +38,7 @@ public class Business_Layer {
 		return false;
 
 	}
-
+	
 	public Boolean CardInfoVerification(String type, String number, String code, String zip, String date) {
 		// Get login info
 		String cardType = type;
