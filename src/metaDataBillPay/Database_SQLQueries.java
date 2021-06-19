@@ -66,7 +66,6 @@ public class Database_SQLQueries {
 		// Get a result set containing all data from test_table
 		DatabaseConnection testConnection = new DatabaseConnection();
 		Connection connection = null;
-		
 		try 
 		{
 			if (testConnection.DBConnection().booleanValue() == true) // Validate Connection to DB
@@ -76,7 +75,7 @@ public class Database_SQLQueries {
 				try 
 				{
 					// Get a result set containing card information
-					String query = "Select cardType, cardNumber, cardCVV, zipCode, expirationDate FROM customersCredentials Where cardType='"
+					String query = "Select cardType, cardNumber, cardCVV, zipCode, expirationDate FROM customersInformation Where cardType='"
 							+ type + "' and cardNumber='" + number + "' and cardCVV='" + code + "' and zipCode='" + zip
 							+ "' and expirationDate='" + date + "'";
 					PreparedStatement preparedStatement = connection.prepareStatement(query);

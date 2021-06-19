@@ -92,43 +92,47 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 
 		// ************************************************************************************************************
-		// ************************************ Login Button Functionality
-		// ********************************************
+		//                                          Login Button Functionality
 		// ************************************************************************************************************
 		JButton loginButton = new JButton("Login");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				{
+					String pwd = new String(passwordField.getPassword()); // Password field needs to be converted
+					
 					// Make sure that inputs are not NULL
-					String pwd = new String(passwordField.getPassword()); // Pwd field needs to be converted
-					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) {
+					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) 
+					{
 						Business_Layer logic = new Business_Layer();
 						Boolean result = logic.GetLoginInfo(usernameField.getText(), pwd);
 						
 						// Path if login was successful and rememeberMe method is checked
-						if (result == true) {
-							if (remember.isSelected() && !rememberPreference) {
+						if (result == true) 
+						{
+							if (remember.isSelected() && !rememberPreference) 
+							{
 								// Insert into the preference the user name
 								preference.put("Username", usernameField.getText());
 								preference.put("Password", pwd);
 								preference.putBoolean("Remember me", true);
 							} 
 							// RemeberMe method is not selected  
-							else if (!remember.isSelected() && rememberPreference) {
+							else if (!remember.isSelected() && rememberPreference) 
+							{
 								// Insert into the preference the user name
 								preference.put("Username", "");
 								preference.put("Password", "");
 								preference.putBoolean("Remember me", false);
 							}
-
 							JOptionPane.showMessageDialog(null, "Login Successful.");
 						} 
-						else // Invalid username/password combination path
+						else // Invalid user name & password combination path
 						{
 							JOptionPane.showMessageDialog(null,
 									"Invalid username and password combination. " + "Please try again.");
 						}
-					} else // Path if 1 or more fields are left NULL
+					} 
+					else // Path if 1 or more fields are left NULL
 					{
 						JOptionPane.showMessageDialog(null, "Please fill out all empty fields.");
 					}

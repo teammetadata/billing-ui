@@ -232,24 +232,29 @@ public class BillPayment {
 		panel_1.add(submitPaymentButton);
 		submitPaymentButton.setBackground(new Color(169, 169, 169));
 		submitPaymentButton.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
+		
+		// ************************************************************************************************************
+		//                                          Submit Payment Button Functionality
+		// ************************************************************************************************************
 		submitPaymentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				{
 					// Initialize CVV code field to be converted 
 					String cardCVV = new String(cardCVVField.getPassword()); 
+					
 					// If statement to verify that card info is not null 
 					if (!cardNumberField.getText().isEmpty() && !cardCVV.isEmpty() && 
 						!cardExpirationField.getText().isEmpty() && !zipCodeField.getText().isEmpty()) 
 					{
 						// Initialize business layer and send over user card info 
 						Business_Layer logic = new Business_Layer();
-						Boolean result = logic.CardInfoVerification(cardTypeField.getActionCommand(), 
+						Boolean result = logic.CardInfoVerification(cardTypeField.getSelectedItem().toString(), 
 						cardNumberField.getText(), cardCVV, zipCodeField.getText(), cardExpirationField.getText());
 						
 						// If statement with verification paths for card information
 						if (result == true) 
 						{
-							JOptionPane.showMessageDialog(null, "Payment Successful.");
+							JOptionPane.showMessageDialog(null, "Card verified.");
 						} 
 						else // Invalid information provided path
 						{
