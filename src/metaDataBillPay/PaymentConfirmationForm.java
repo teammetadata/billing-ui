@@ -49,6 +49,8 @@ public class PaymentConfirmationForm {
 	 */
 	private void initialize() {
 		Business_Layer logic = new Business_Layer();
+		LoginWindowForm login = new LoginWindowForm();
+		
 		PaymentConfirmation = new JFrame();
 		PaymentConfirmation.getContentPane().setEnabled(false);
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));

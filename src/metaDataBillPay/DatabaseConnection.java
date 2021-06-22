@@ -3,8 +3,6 @@ package metaDataBillPay;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import javax.swing.JOptionPane;
-
 public class DatabaseConnection {
 	// Initialize variables for DB connection
 	String username = "metadata";
@@ -28,13 +26,11 @@ public class DatabaseConnection {
 			} 
 			else // Path if connection is invalid
 			{
-				return false;
+				return null;
 			}
 		} 
 		catch (Exception e) // Exception catching path
 		{
-			JOptionPane.showMessageDialog(null, "Error# 1: Unexpected error occured. Please contact your system"
-					+ " adminstration for addtional help at 1-800-123-4567.");
 			return false;
 		}
 	}

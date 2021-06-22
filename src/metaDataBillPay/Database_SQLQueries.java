@@ -10,7 +10,7 @@ public class Database_SQLQueries {
 
 //	// Main method to test functionality 
 //	public static void main(String[] args)
-	public Boolean LoginConfirmation(String username, String password) {
+	public String LoginConfirmation(String username, String password) {
 
 		// Create an command procedure to insert SQL statement into
 		// Get a result set containing all data from test_table
@@ -26,17 +26,18 @@ public class Database_SQLQueries {
 				try 
 				{
 					// Get a result set containing user name and password from test_table
-					String query = "Select Username, Password FROM customersCredentials Where Username='" + username
+					String query = "Select AccountNumber FROM customersCredentials Where Username='" + username
 							+ "' and Password='" + password + "'";
 					PreparedStatement preparedStatement = connection.prepareStatement(query);
 					ResultSet results = preparedStatement.executeQuery();
 					if (results.next()) 
 					{
-						return true; // Returns true is the credentials were found
+						String accountNumber = new String(results.getString(1));
+						return accountNumber; // Returns true is the credentials were found
 					} 
 					else 
 					{
-						return false; // Cursor positioned after the last row
+						return ""; // Cursor positioned after the last row
 					}
 				} 
 				catch (Exception e) // Exception catching path for any SQL Exceptions or ResultSets Retrieval
@@ -49,16 +50,16 @@ public class Database_SQLQueries {
 			{
 				JOptionPane.showMessageDialog(null, "ERROR# 2.1: Unexpected error occured. Please contact your "
 						+ "system adminstration for addtional help at 1-800-123-4567.");
-				return false;
+				return "";
 			}
 		} 
 		catch (Exception e) // Exception catching path for DB Connection Error
 		{
 			JOptionPane.showMessageDialog(null, "ERROR# 2.0: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
-			return false;
+			return "";
 		}
-		return false;
+		return "";
 	}
 
 	public Boolean CardVerification(String type, String number, String code, String zip, String date) {

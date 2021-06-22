@@ -12,7 +12,7 @@ public class Business_Layer {
 //			CardInfoVerification();
 //		}
 
-	public Boolean GetLoginInfo(String user, String pwd) {
+	public String GetLoginInfo(String user, String pwd) {
 		// Get login info
 		String username = user;
 		String password = pwd;
@@ -21,14 +21,14 @@ public class Business_Layer {
 		try 
 		{
 			// Use DB login confirmation method to see if login was successful or not
-			Boolean result = db.LoginConfirmation(username, password);
-			if (result == true) 
+			String result = db.LoginConfirmation(username, password);
+			if (result.isEmpty()) 
 			{
-				return true;
+				return "";
 			} 
 			else 
 			{
-				return false;
+				return result;
 			}
 		} 
 		catch (Exception e) // Exception catching path
@@ -36,7 +36,7 @@ public class Business_Layer {
 			JOptionPane.showMessageDialog(null, "ERROR# 3: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
 		}
-		return false;
+		return "";
 	}
 	
 	public Boolean CardInfoVerification(String type, String number, String code, String zip, String date) {

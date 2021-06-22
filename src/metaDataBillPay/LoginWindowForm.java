@@ -29,6 +29,7 @@ public class LoginWindowForm {
 	public JTextField usernameField;
 	public JPasswordField passwordField;
 	public JCheckBox remember;
+	public String actNumber;
 
 	/**
 	 * Launch the application.
@@ -104,10 +105,10 @@ public class LoginWindowForm {
 					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) 
 					{
 						Business_Layer logic = new Business_Layer();
-						Boolean result = logic.GetLoginInfo(usernameField.getText(), pwd);
+						actNumber = logic.GetLoginInfo(usernameField.getText(), pwd);
 						
 						// Path if login was successful and rememeberMe method is checked
-						if (result == true) 
+						if (!actNumber.isEmpty()) 
 						{
 							if (remember.isSelected() && !rememberPreference) 
 							{
