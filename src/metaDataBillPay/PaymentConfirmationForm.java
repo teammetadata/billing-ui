@@ -48,6 +48,7 @@ public class PaymentConfirmationForm {
 	 * Create the frame.
 	 */
 	private void initialize() {
+		Business_Layer logic = new Business_Layer();
 		PaymentConfirmation = new JFrame();
 		PaymentConfirmation.getContentPane().setEnabled(false);
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
@@ -125,7 +126,7 @@ public class PaymentConfirmationForm {
 		textField_5.setBackground(Color.WHITE);
 		textField_5.setEditable(false);
 		textField_5.setHorizontalAlignment(SwingConstants.LEFT);
-		textField_5.setText("12345678");
+		textField_5.setText(logic.ConfirmationNumber());
 		textField_5.setColumns(10);
 
 		lblNewLabel_6 = new JLabel("Thank you for your payment.");
