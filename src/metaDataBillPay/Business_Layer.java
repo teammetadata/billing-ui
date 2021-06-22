@@ -95,8 +95,22 @@ public class Business_Layer {
 //		return false;
 //	}
 	
-	public String ConfirmationNumber() 
+	public String ConfirmationDisplayLabels(int display)
 	{
+		if (display == 1) // Path for client full name label
+		{
+			return "Jorge Luis Canales Jr";
+		}
+		else if (display == 2) // Path for account number label
+		{
+			return "XXXX-XXXX-1234";
+		}
+		else if (display == 3) // Path remaining balance label
+		{
+			return "$0.00";
+		}
+		else if (display == 4) // Path for confirmation/reference number label
+		{
 			Random rd = new Random(); 
 			
 			int rdNumb;
@@ -109,7 +123,21 @@ public class Business_Layer {
 				
 				m[i] = Integer.toString(rdNumb);
 			}
+			
 			String number = m[0]+m[1]+m[2]+m[3]+m[4]+m[5]+m[6]+m[7];
 			return number;
+		}
+		else if (display == 5) // Path for payment amount label
+		{
+			return "$65.75";
+		}
+		else if (display == 6) // Path for payment date
+		{
+			return "06/30/2021";
+		}
+		else
+		{
+			return null;
+		}
 	}
 }
