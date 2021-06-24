@@ -29,7 +29,7 @@ public class LoginWindowForm {
 	public JTextField usernameField;
 	public JPasswordField passwordField;
 	public JCheckBox remember;
-	public String actNumber;
+	public static String actNumber;
 
 	/**
 	 * Launch the application.
@@ -125,7 +125,10 @@ public class LoginWindowForm {
 								preference.put("Password", "");
 								preference.putBoolean("Remember me", false);
 							}
-							JOptionPane.showMessageDialog(null, "Login Successful.");
+							frmMetabillpaylogin.setVisible(false);
+							BillPayment billForm = new BillPayment();
+							billForm.frmMetabillpaylogin.setVisible(true);
+			
 						} 
 						else // Invalid user name & password combination path
 						{

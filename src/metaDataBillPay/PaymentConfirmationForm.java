@@ -12,7 +12,7 @@ import javax.swing.SwingConstants;
 
 public class PaymentConfirmationForm {
 
-	private JFrame PaymentConfirmation;
+	JFrame PaymentConfirmation;
 	private JTextField accountNumberLabel;
 	private JTextField remainingBalLabel;
 	private JTextField fullNameLabel;
@@ -42,6 +42,7 @@ public class PaymentConfirmationForm {
 	 */
 	public PaymentConfirmationForm() {
 		initialize();
+		
 	}
 
 	/**
@@ -49,7 +50,6 @@ public class PaymentConfirmationForm {
 	 */
 	private void initialize() {
 		Business_Layer logic = new Business_Layer();
-		LoginWindowForm login = new LoginWindowForm();
 		
 		PaymentConfirmation = new JFrame();
 		PaymentConfirmation.getContentPane().setEnabled(false);
@@ -69,7 +69,7 @@ public class PaymentConfirmationForm {
 		accountNumberLabel.setBackground(Color.WHITE);
 		accountNumberLabel.setEditable(false);
 		accountNumberLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		accountNumberLabel.setText(logic.ConfirmationDisplayLabels(2));
+		accountNumberLabel.setText(LoginWindowForm.actNumber);
 		accountNumberLabel.setColumns(10);
 
 		JLabel lblNewLabel_1 = new JLabel("Remaining Act Balance");

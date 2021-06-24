@@ -1,5 +1,7 @@
 package metaDataBillPay;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -11,7 +13,6 @@ public class Business_Layer {
 //			
 //			CardInfoVerification();
 //		}
-
 	public String GetLoginInfo(String user, String pwd) {
 		// Get login info
 		String username = user;
@@ -94,17 +95,14 @@ public class Business_Layer {
 //		}
 //		return false;
 //	}
-	
 	public String ConfirmationDisplayLabels(int display)
 	{
+		
 		if (display == 1) // Path for client full name label
 		{
 			return "Jorge Luis Canales Jr";
 		}
-		else if (display == 2) // Path for account number label
-		{
-			return "XXXX-XXXX-1234";
-		}
+		
 		else if (display == 3) // Path remaining balance label
 		{
 			return "$0.00";
@@ -133,7 +131,9 @@ public class Business_Layer {
 		}
 		else if (display == 6) // Path for payment date
 		{
-			return "06/30/2021";
+			 SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
+			 Date date = new Date();  
+			 return formatter.format(date);
 		}
 		else
 		{

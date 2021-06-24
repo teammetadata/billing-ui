@@ -1,14 +1,12 @@
 package metaDataBillPay;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -21,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
-import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
@@ -31,7 +28,7 @@ import javax.swing.JTextField;
 
 public class BillPayment {
 
-	private JFrame frmMetabillpaylogin;
+	JFrame frmMetabillpaylogin;
 	private JTextField cardNumberField;
 	private JPasswordField cardCVVField;
 	private JTextField cardExpirationField;
@@ -40,24 +37,26 @@ public class BillPayment {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BillPayment window = new BillPayment();
-					window.frmMetabillpaylogin.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					BillPayment window = new BillPayment();
+//					window.frmMetabillpaylogin.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the application.
 	 */
 	public BillPayment() {
 		initialize();
+		LoginWindowForm window = new LoginWindowForm();
+		window.frmMetabillpaylogin.setVisible(false);
 	}
 
 	/**
@@ -131,7 +130,7 @@ public class BillPayment {
 		JComboBox cardTypeField = new JComboBox();
 		cardTypeField.setModel(new DefaultComboBoxModel(new String[] {"Credit", "Debit"}));
 		cardTypeField.setMaximumRowCount(4);
-		cardTypeField.setBounds(81, 153, 100, 21);
+		cardTypeField.setBounds(84, 153, 100, 21);
 		frmMetabillpaylogin.getContentPane().add(cardTypeField);
 
 		JTextField textArea = new JTextField();
@@ -161,13 +160,13 @@ public class BillPayment {
 		lblNewLabel_1_8.setBounds(271, 207, 97, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_8);
 
-		JLabel lblNewLabel_1_9 = new JLabel("Billing ZipCode");
+		JLabel lblNewLabel_1_9 = new JLabel("Zip Code");
 		lblNewLabel_1_9.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_9.setBounds(271, 180, 81, 15);
+		lblNewLabel_1_9.setBounds(271, 180, 97, 15);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_9);
 
 		cardNumberField = new JTextField();
-		cardNumberField.setBounds(82, 176, 158, 25);
+		cardNumberField.setBounds(84, 176, 160, 25);
 		frmMetabillpaylogin.getContentPane().add(cardNumberField);
 
 		cardExpirationField = new JTextField();
@@ -180,7 +179,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(separator_2);
 
 		zipCodeField = new JTextField();
-		zipCodeField.setBounds(364, 176, 97, 20);
+		zipCodeField.setBounds(364, 176, 84, 20);
 		frmMetabillpaylogin.getContentPane().add(zipCodeField);
 
 		JPanel panel_2 = new JPanel();
@@ -197,14 +196,20 @@ public class BillPayment {
 
 		cardCVVField = new JPasswordField();
 		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup().addGap(73)
-						.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(337, Short.MAX_VALUE)));
-		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
-				gl_panel.createSequentialGroup().addContainerGap(62, Short.MAX_VALUE)
-						.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addGap(20)));
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(74)
+					.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(337, Short.MAX_VALUE))
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(62)
+					.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(20, Short.MAX_VALUE))
+		);
 		panel.setLayout(gl_panel);
 
 		JTextField textArea_2 = new JTextField();
@@ -254,7 +259,9 @@ public class BillPayment {
 						// If statement with verification paths for card information
 						if (result == true) 
 						{
-							JOptionPane.showMessageDialog(null, "Card verified.");
+							frmMetabillpaylogin.setVisible(false);
+							PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
+							receiptForm.PaymentConfirmation.setVisible(true);
 						} 
 						else // Invalid information provided path
 						{
