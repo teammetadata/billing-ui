@@ -260,6 +260,7 @@ public class BillPayment {
 						// If statement with verification paths for card information
 						if (result == true) 
 						{
+							JOptionPane.showMessageDialog(null, "Payment successful.");
 							frmMetabillpaylogin.setVisible(false);
 							PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
 							receiptForm.PaymentConfirmation.setVisible(true);
