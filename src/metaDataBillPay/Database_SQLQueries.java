@@ -10,11 +10,11 @@ import javax.swing.JOptionPane;
 
 
 public class Database_SQLQueries {
-public static void main(String args[])
-{
-	String s[]=UserConfInfo("15629222");
-	System.out.println(s[0]+" "+s[1]);
-	}
+//public static void main(String args[])
+//{
+//	String s[]=UserConfInfo("15629222");
+//	System.out.println(s[0]+" "+s[1]);
+//	}
 //	// Main method to test functionality 
 //	public static void main(String[] args)
 	public String LoginConfirmation(String username, String password) {
