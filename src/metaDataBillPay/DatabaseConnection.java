@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DatabaseConnection {
 	// Initialize variables for DB connection
 	String username = "metadata";
-	String password = "Meta2021";
+	String password = "fZ&Rtuml3*2Tov^CaA$2slb#9I2&ulgc";
 	String dbURL = "jdbc:sqlserver://metadatabill.database.windows.net;databaseName=MetaDataDB";
 	Connection connection = null;
 
