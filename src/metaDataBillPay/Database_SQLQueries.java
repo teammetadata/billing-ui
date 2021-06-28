@@ -158,7 +158,7 @@ public class Database_SQLQueries {
 				}
 				return false;
 	}
-	
+
 	public static String[] UserConfInfo(String Number) {
 		// retreiving data from the database for the confirmation page (full name,
 		// remaining balance)
@@ -172,7 +172,6 @@ public class Database_SQLQueries {
 				connection = DriverManager.getConnection(testConnection.dbURL, testConnection.username,
 						testConnection.password);
 
-				// Get a result set containing user name and password from test_table
 				String query = "SELECT FullName,Balance FROM customersInformation WHERE AccountNumber='" + AccountNumber
 						+ "'";
 
@@ -190,7 +189,7 @@ public class Database_SQLQueries {
 				} catch (Exception e) // Exception catching path for any SQL Exceptions or ResultSets Retrieval
 				{
 					System.out.println(e);
-					JOptionPane.showMessageDialog(null, "ERROR# 2.2d: Unexpected error occurred. Please contact your"
+					JOptionPane.showMessageDialog(null, "ERROR# 2.1d: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
 				}
 			}
