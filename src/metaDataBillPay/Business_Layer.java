@@ -95,48 +95,43 @@ public class Business_Layer {
 //		}
 //		return false;
 //	}
-	public String ConfirmationDisplayLabels(int display)
-	{
-		
+	public String ConfirmationDisplayLabels(int display) {
+		Database_SQLQueries db = new Database_SQLQueries();
+		String info[] = db.UserConfInfo(LoginWindowForm.actNumber);
 		if (display == 1) // Path for client full name label
 		{
-			return "Jorge Luis Canales Jr";
+			return info[0];
 		}
-		
+
 		else if (display == 3) // Path remaining balance label
 		{
-			return "$0.00";
-		}
-		else if (display == 4) // Path for confirmation/reference number label
+			return info[1];
+			
+		} else if (display == 4) // Path for confirmation/reference number label
 		{
-			Random rd = new Random(); 
-			
+			Random rd = new Random();
+
 			int rdNumb;
-			
+
 			String m[] = new String[8];
-			
-			for(int i=0; i<8; i++) 
-			{
+
+			for (int i = 0; i < 8; i++) {
 				rdNumb = rd.nextInt(8);
-				
+
 				m[i] = Integer.toString(rdNumb);
 			}
-			
-			String number = m[0]+m[1]+m[2]+m[3]+m[4]+m[5]+m[6]+m[7];
+
+			String number = m[0] + m[1] + m[2] + m[3] + m[4] + m[5] + m[6] + m[7];
 			return number;
-		}
-		else if (display == 5) // Path for payment amount label
+		} else if (display == 5) // Path for payment amount label
 		{
-			return "$65.75";
-		}
-		else if (display == 6) // Path for payment date
+			return "";
+		} else if (display == 6) // Path for payment date
 		{
-			 SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");  
-			 Date date = new Date();  
-			 return formatter.format(date);
-		}
-		else
-		{
+			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+			Date date = new Date();
+			return formatter.format(date);
+		} else {
 			return null;
 		}
 	}
