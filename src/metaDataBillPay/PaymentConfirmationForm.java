@@ -3,12 +3,15 @@ package metaDataBillPay;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PaymentConfirmationForm {
 
@@ -42,7 +45,7 @@ public class PaymentConfirmationForm {
 	 */
 	public PaymentConfirmationForm() {
 		initialize();
-		
+
 	}
 
 	/**
@@ -50,7 +53,7 @@ public class PaymentConfirmationForm {
 	 */
 	private void initialize() {
 		Business_Layer logic = new Business_Layer();
-		
+
 		PaymentConfirmation = new JFrame();
 		PaymentConfirmation.getContentPane().setEnabled(false);
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
@@ -59,6 +62,7 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.setBounds(100, 100, 450, 325);
 		PaymentConfirmation.getContentPane().setBackground(Color.LIGHT_GRAY);
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
+		PaymentConfirmation.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
 
 		JLabel lblNewLabel = new JLabel("Account Number");
 		lblNewLabel.setBounds(16, 51, 121, 14);
@@ -81,7 +85,7 @@ public class PaymentConfirmationForm {
 		remainingBalLabel.setBackground(Color.WHITE);
 		remainingBalLabel.setEditable(false);
 		remainingBalLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		remainingBalLabel.setText(logic.ConfirmationDisplayLabels(3));
+		remainingBalLabel.setText(logic.confirmationDisplayLabels(3));
 		remainingBalLabel.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("Customer Name");
@@ -93,7 +97,7 @@ public class PaymentConfirmationForm {
 		fullNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		fullNameLabel.setEditable(false);
 		fullNameLabel.setBackground(Color.WHITE);
-		fullNameLabel.setText(logic.ConfirmationDisplayLabels(1));
+		fullNameLabel.setText(logic.confirmationDisplayLabels(1));
 		lblNewLabel_2.setBackground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_3 = new JLabel("Payment Confirmation #");
@@ -104,7 +108,7 @@ public class PaymentConfirmationForm {
 		paymentAmountLabel.setBounds(162, 128, 104, 20);
 		paymentAmountLabel.setBackground(Color.WHITE);
 		paymentAmountLabel.setEditable(false);
-		paymentAmountLabel.setText(logic.ConfirmationDisplayLabels(5));
+		paymentAmountLabel.setText(logic.confirmationDisplayLabels(5));
 		paymentAmountLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		paymentAmountLabel.setColumns(10);
 
@@ -116,7 +120,7 @@ public class PaymentConfirmationForm {
 		paymentDateLabel.setBounds(162, 153, 86, 20);
 		paymentDateLabel.setBackground(Color.WHITE);
 		paymentDateLabel.setEditable(false);
-		paymentDateLabel.setText(logic.ConfirmationDisplayLabels(6));
+		paymentDateLabel.setText(logic.confirmationDisplayLabels(6));
 		paymentDateLabel.setColumns(10);
 
 		JLabel lblNewLabel_5 = new JLabel("Payment Date");
@@ -128,14 +132,23 @@ public class PaymentConfirmationForm {
 		confirmationNumberLabel.setBackground(Color.WHITE);
 		confirmationNumberLabel.setEditable(false);
 		confirmationNumberLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		confirmationNumberLabel.setText(logic.ConfirmationDisplayLabels(4));
+		confirmationNumberLabel.setText(logic.confirmationDisplayLabels(4));
 		confirmationNumberLabel.setColumns(10);
 
 		lblNewLabel_6 = new JLabel("Thank you for your payment.");
 		lblNewLabel_6.setBounds(129, 193, 224, 49);
 		lblNewLabel_6.setFont(new Font("Dialog", Font.BOLD, 14));
 
+		// Added action to Sign Off button
 		JButton btnNewButton = new JButton("Sign Out");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PaymentConfirmation.setVisible(false);
+				LoginWindowForm window = new LoginWindowForm();
+				window.frmMetabillpaylogin.setVisible(true);
+			}
+		});
+
 		btnNewButton.setBounds(340, 7, 89, 23);
 		btnNewButton.setBackground(Color.ORANGE);
 		PaymentConfirmation.getContentPane().setLayout(null);

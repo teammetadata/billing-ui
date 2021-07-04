@@ -23,13 +23,11 @@ public class DatabaseConnection {
 			if (connection.isValid(0)) // Path if connection is valid
 			{
 				return true;
-			} 
-			else // Path if connection is invalid
+			} else // Path if connection is invalid
 			{
 				return null;
 			}
-		} 
-		catch (Exception e) // Exception catching path
+		} catch (Exception e) // Exception catching path
 		{
 			return false;
 		}

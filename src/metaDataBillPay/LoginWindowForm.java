@@ -43,7 +43,7 @@ public class LoginWindowForm {
 
 				} catch (Exception e) // Exception catching path
 				{
-					 e.printStackTrace();
+					e.printStackTrace();
 				}
 			}
 		});
@@ -84,8 +84,7 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().setForeground(Color.LIGHT_GRAY);
 		frmMetabillpaylogin.setForeground(SystemColor.desktop);
 		frmMetabillpaylogin.setTitle("MetaBillPayLogin");
-		frmMetabillpaylogin
-				.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Canal\\OneDrive\\Pictures\\icon.png"));
+		frmMetabillpaylogin.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
 		frmMetabillpaylogin.setAutoRequestFocus(false);
 		frmMetabillpaylogin.setResizable(false);
 		frmMetabillpaylogin.setBounds(100, 100, 327, 427);
@@ -93,33 +92,29 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 
 		// ************************************************************************************************************
-		//                                          Login Button Functionality
+		// Login Button Functionality
 		// ************************************************************************************************************
 		JButton loginButton = new JButton("Login");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				{
 					String pwd = new String(passwordField.getPassword()); // Password field needs to be converted
-					
+
 					// Make sure that inputs are not NULL
-					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) 
-					{
+					if (!usernameField.getText().isEmpty() && !pwd.isEmpty()) {
 						Business_Layer logic = new Business_Layer();
-						actNumber = logic.GetLoginInfo(usernameField.getText(), pwd);
-						
+						actNumber = logic.getLoginInfo(usernameField.getText(), pwd);
+
 						// Path if login was successful and rememeberMe method is checked
-						if (!actNumber.isEmpty()) 
-						{
-							if (remember.isSelected() && !rememberPreference) 
-							{
+						if (!actNumber.isEmpty()) {
+							if (remember.isSelected() && !rememberPreference) {
 								// Insert into the preference the user name
 								preference.put("Username", usernameField.getText());
 								preference.put("Password", pwd);
 								preference.putBoolean("Remember me", true);
-							} 
-							// RemeberMe method is not selected  
-							else if (!remember.isSelected() && rememberPreference) 
-							{
+							}
+							// RemeberMe method is not selected
+							else if (!remember.isSelected() && rememberPreference) {
 								// Insert into the preference the user name
 								preference.put("Username", "");
 								preference.put("Password", "");
@@ -128,15 +123,13 @@ public class LoginWindowForm {
 							frmMetabillpaylogin.setVisible(false);
 							BillPayment billForm = new BillPayment();
 							billForm.frmMetabillpaylogin.setVisible(true);
-			
-						} 
-						else // Invalid user name & password combination path
+
+						} else // Invalid user name & password combination path
 						{
 							JOptionPane.showMessageDialog(null,
 									"Invalid username and password combination. " + "Please try again.");
 						}
-					} 
-					else // Path if 1 or more fields are left NULL
+					} else // Path if 1 or more fields are left NULL
 					{
 						JOptionPane.showMessageDialog(null, "Please fill out all empty fields.");
 					}
@@ -199,7 +192,7 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.getContentPane().add(remember);
 
 		JLabel lblNewLabel_3 = new JLabel();
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\Canal\\git\\MetaDataProject\\artifacts\\logo.png"));
+		lblNewLabel_3.setIcon(new ImageIcon(".//artifacts//logo.png"));
 		lblNewLabel_3.setBounds(29, 288, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 
