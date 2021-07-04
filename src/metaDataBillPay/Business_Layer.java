@@ -7,9 +7,9 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Business_Layer {
-	double paymentAmountBill;
+	private static String paymentAmountBill;
 
-//		// Main method to test functionality 
+	// // Main method to test functionality
 //		public static void main(String[] args) {
 //			
 //			CardInfoVerification();
@@ -63,12 +63,11 @@ public class Business_Layer {
 
 	public Boolean paymentSubmissionAndUpdate(double payment) {
 		// Get payment amount
-		double paymentAmount = payment;
-		paymentAmountBill = payment;
+		paymentAmountBill = (String.format("%.2f", payment));
 		Database_SQLQueries db = new Database_SQLQueries();
 		try {
 			// Use DB payment method to update payment amount into the DB
-			Boolean result = db.paymentUpdate(paymentAmount);
+			Boolean result = db.paymentUpdate(payment);
 			if (result == true) {
 				return true;
 			} else {
@@ -90,7 +89,7 @@ public class Business_Layer {
 			return info[2];// Path for account number label
 
 		} else if (displayField == 3) {
-			return info[1]; // Path for remaning balance label
+			return "$" + info[1]; // Path for remaning balance label
 
 		} else if (displayField == 4) {
 			return info[3]; // Path for payment due label
@@ -108,9 +107,7 @@ public class Business_Layer {
 		}
 
 		else if (display == 3) {
-			double balance = Double.valueOf(info[1]);
-			double remaining = balance - paymentAmountBill;
-			return String.valueOf(remaining); // Path remaining balance label
+			return "$" + info[1]; // Path remaining balance label
 
 		} else if (display == 4) {
 			// Path for confirmation/reference number label
@@ -128,8 +125,7 @@ public class Business_Layer {
 			return number;
 		} else if (display == 5) {
 			// Path for payment amount label
-			paymentSubmissionAndUpdate(76.20);
-			String pay = String.valueOf(paymentAmountBill);
+			String pay = "$" + paymentAmountBill;
 			return pay;
 		} else if (display == 6) {
 			// Path for payment date

@@ -26,6 +26,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class BillPayment {
 
@@ -34,6 +35,7 @@ public class BillPayment {
 	private JPasswordField cardCVVField;
 	private JTextField cardExpirationField;
 	private JTextField zipCodeField;
+	private JTextField paymentAmountField;
 
 	/**
 	 * Launch the application.
@@ -82,11 +84,6 @@ public class BillPayment {
 		lblNewLabel.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel);
 
-		JLabel lblNewLabel_1 = new JLabel("Card Type");
-		lblNewLabel_1.setBounds(16, 159, 69, 15);
-		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1);
-
 		JLabel lblNewLabel_2 = new JLabel("    Utility Payment System");
 		lblNewLabel_2.setBorder(new CompoundBorder());
 		lblNewLabel_2.setBackground(new Color(128, 128, 128));
@@ -128,12 +125,6 @@ public class BillPayment {
 		separator.setBounds(0, 53, 627, 9);
 		frmMetabillpaylogin.getContentPane().add(separator);
 
-		JComboBox cardTypeField = new JComboBox();
-		cardTypeField.setModel(new DefaultComboBoxModel(new String[] { "Credit", "Debit" }));
-		cardTypeField.setMaximumRowCount(4);
-		cardTypeField.setBounds(84, 153, 100, 21);
-		frmMetabillpaylogin.getContentPane().add(cardTypeField);
-
 		JTextField accountNumberLabel = new JTextField();
 		accountNumberLabel.setEditable(false);
 		accountNumberLabel.setBackground(new Color(224, 255, 255));
@@ -148,42 +139,10 @@ public class BillPayment {
 		paymentDueDateLabel.setText(logic.billPaymentDisplayClientInfo(4));
 		frmMetabillpaylogin.getContentPane().add(paymentDueDateLabel);
 
-		JLabel lblNewLabel_1_6 = new JLabel("Card Card #");
-		lblNewLabel_1_6.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_6.setBounds(16, 186, 69, 15);
-		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_6);
-
-		JLabel lblNewLabel_1_7 = new JLabel("CVV Code");
-		lblNewLabel_1_7.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_7.setBounds(16, 213, 62, 15);
-		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_7);
-
-		JLabel lblNewLabel_1_8 = new JLabel("Expiration Date");
-		lblNewLabel_1_8.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_8.setBounds(271, 207, 97, 15);
-		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_8);
-
-		JLabel lblNewLabel_1_9 = new JLabel("Zip Code");
-		lblNewLabel_1_9.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
-		lblNewLabel_1_9.setBounds(271, 180, 97, 15);
-		frmMetabillpaylogin.getContentPane().add(lblNewLabel_1_9);
-
-		cardNumberField = new JTextField();
-		cardNumberField.setBounds(84, 176, 160, 25);
-		frmMetabillpaylogin.getContentPane().add(cardNumberField);
-
-		cardExpirationField = new JTextField();
-		cardExpirationField.setBounds(364, 203, 97, 20);
-		frmMetabillpaylogin.getContentPane().add(cardExpirationField);
-
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBackground(Color.BLACK);
 		separator_2.setBounds(0, 257, 627, 30);
 		frmMetabillpaylogin.getContentPane().add(separator_2);
-
-		zipCodeField = new JTextField();
-		zipCodeField.setBounds(364, 176, 84, 20);
-		frmMetabillpaylogin.getContentPane().add(zipCodeField);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new LineBorder(Color.GRAY));
@@ -198,15 +157,97 @@ public class BillPayment {
 		panel.setFocusTraversalKeysEnabled(false);
 
 		cardCVVField = new JPasswordField();
+
+		JLabel lblNewLabel_1_8_1 = new JLabel("Payment Amount");
+		lblNewLabel_1_8_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+
+		paymentAmountField = new JTextField();
+
+		JLabel lblNewLabel_1_8 = new JLabel("Expiration Date");
+		lblNewLabel_1_8.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
+
+		JLabel lblNewLabel_1_9 = new JLabel("Zip Code");
+		lblNewLabel_1_9.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
+
+		zipCodeField = new JTextField();
+
+		cardExpirationField = new JTextField();
+
+		cardNumberField = new JTextField();
+
+		JComboBox cardTypeField = new JComboBox();
+		cardTypeField.setModel(new DefaultComboBoxModel(new String[] { "Credit", "Debit" }));
+		cardTypeField.setMaximumRowCount(4);
+
+		JLabel lblNewLabel_1_7 = new JLabel("CVV Code");
+		lblNewLabel_1_7.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
+
+		JLabel lblNewLabel_1 = new JLabel("Card Type");
+		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
+
+		JLabel lblNewLabel_1_6 = new JLabel("Card Card #");
+		lblNewLabel_1_6.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		GroupLayout gl_panel = new GroupLayout(panel);
-		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel.createSequentialGroup().addGap(74)
-						.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(337, Short.MAX_VALUE)));
-		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.TRAILING).addGroup(Alignment.LEADING,
-				gl_panel.createSequentialGroup().addGap(62)
-						.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(20, Short.MAX_VALUE)));
+		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.TRAILING).addGroup(gl_panel
+				.createSequentialGroup().addContainerGap()
+				.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel.createSequentialGroup().addGap(7).addComponent(lblNewLabel_1_7,
+										GroupLayout.PREFERRED_SIZE, 62, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblNewLabel_1_6, GroupLayout.PREFERRED_SIZE, 69,
+										GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 69, GroupLayout.PREFERRED_SIZE))
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel.createSequentialGroup()
+								.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+										.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 43,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(cardNumberField, GroupLayout.PREFERRED_SIZE, 139,
+												GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+								.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+										.addComponent(lblNewLabel_1_8_1, GroupLayout.PREFERRED_SIZE, 96,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNewLabel_1_8, GroupLayout.PREFERRED_SIZE, 97,
+												GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_panel.createSequentialGroup()
+								.addComponent(cardTypeField, GroupLayout.PREFERRED_SIZE, 100,
+										GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 82, Short.MAX_VALUE).addComponent(
+										lblNewLabel_1_9, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)))
+				.addPreferredGap(ComponentPlacement.UNRELATED)
+				.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(paymentAmountField, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+						.addComponent(zipCodeField, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cardExpirationField, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+				.addContainerGap()));
+		gl_panel.setVerticalGroup(gl_panel.createParallelGroup(Alignment.TRAILING).addGroup(Alignment.LEADING, gl_panel
+				.createSequentialGroup().addContainerGap()
+				.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_1_9, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(zipCodeField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
+						.addComponent(cardTypeField, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel_1_8, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+						.addComponent(cardExpirationField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
+						.addComponent(cardNumberField, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_1_6, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE))
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addComponent(paymentAmountField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+								GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblNewLabel_1_8_1, GroupLayout.PREFERRED_SIZE, 15,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(cardCVVField, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_1_7, GroupLayout.PREFERRED_SIZE, 15,
+										GroupLayout.PREFERRED_SIZE)))
+				.addContainerGap(23, Short.MAX_VALUE)));
 		panel.setLayout(gl_panel);
 
 		JTextField fullNameLabel = new JTextField();
@@ -237,6 +278,19 @@ public class BillPayment {
 		submitPaymentButton.setBackground(new Color(169, 169, 169));
 		submitPaymentButton.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
+		// Added action to Sign Off button
+		JButton signOffButton = new JButton("Sign Off");
+		signOffButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmMetabillpaylogin.setVisible(false);
+				LoginWindowForm window = new LoginWindowForm();
+				window.frmMetabillpaylogin.setVisible(true);
+			}
+		});
+		signOffButton.setBackground(Color.ORANGE);
+		signOffButton.setBounds(512, 16, 89, 23);
+		frmMetabillpaylogin.getContentPane().add(signOffButton);
+
 		// ************************************************************************************************************
 		// Submit Payment Button Functionality
 		// ************************************************************************************************************
@@ -248,22 +302,31 @@ public class BillPayment {
 
 					// If statement to verify that card info is not null
 					if (!cardNumberField.getText().isEmpty() && !cardCVV.isEmpty()
-							&& !cardExpirationField.getText().isEmpty() && !zipCodeField.getText().isEmpty()) {
-						// Initialize business layer and send over user card info
-						Business_Layer logic = new Business_Layer();
-						Boolean result = logic.cardInfoVerification(cardTypeField.getSelectedItem().toString(),
-								cardNumberField.getText(), cardCVV, zipCodeField.getText(),
-								cardExpirationField.getText());
+							&& !cardExpirationField.getText().isEmpty() && !zipCodeField.getText().isEmpty()
+							&& !paymentAmountField.getText().isEmpty()) {
+						if (Double.parseDouble(paymentAmountField.getText()) > 0
+								&& Double.parseDouble(paymentAmountField.getText()) <= Double
+										.parseDouble(balanceDueLabel.getText().substring(1))) {
+							// Initialize business layer and send over user card info
+							Business_Layer logic = new Business_Layer();
+							Boolean result = logic.cardInfoVerification(cardTypeField.getSelectedItem().toString(),
+									cardNumberField.getText(), cardCVV, zipCodeField.getText(),
+									cardExpirationField.getText());
 
-						// If statement with verification paths for card information
-						if (result == true) {
-							JOptionPane.showMessageDialog(null, "Payment successful.");
-							frmMetabillpaylogin.setVisible(false);
-							PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
-							receiptForm.PaymentConfirmation.setVisible(true);
-						} else // Invalid information provided path
-						{
-							JOptionPane.showMessageDialog(null, "Invalid card information. " + "Please try again.");
+							Boolean paymentCompleted = logic
+									.paymentSubmissionAndUpdate(Double.parseDouble(paymentAmountField.getText()));
+							// If statement with verification paths for card information
+							if (result == true && paymentCompleted == true) {
+								JOptionPane.showMessageDialog(null, "Payment successful.");
+								frmMetabillpaylogin.setVisible(false);
+								PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
+								receiptForm.PaymentConfirmation.setVisible(true);
+							} else // Invalid information provided path
+							{
+								JOptionPane.showMessageDialog(null, "Invalid card information. " + "Please try again.");
+							}
+						} else {
+							JOptionPane.showMessageDialog(null, "Please enter a valid payment amount. ");
 						}
 					} else // Path if 1 or more fields are left NULL
 					{
