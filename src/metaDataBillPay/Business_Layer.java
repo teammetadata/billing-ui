@@ -125,8 +125,8 @@ public class Business_Layer {
 			return number;
 		} else if (display == 5) {
 			// Path for payment amount label
-			String pay = "$" + paymentAmountBill;
-			return pay;
+			return "$" + paymentAmountBill;
+			
 		} else if (display == 6) {
 			// Path for payment date
 			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
