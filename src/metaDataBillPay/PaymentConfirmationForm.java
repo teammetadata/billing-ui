@@ -59,17 +59,17 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		PaymentConfirmation.setTitle("MetaData Electric Inc. Payment Receipt");
 		PaymentConfirmation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		PaymentConfirmation.setBounds(100, 100, 450, 325);
+		PaymentConfirmation.setBounds(100, 100, 537, 325);
 		PaymentConfirmation.getContentPane().setBackground(Color.LIGHT_GRAY);
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
 		PaymentConfirmation.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
 
 		JLabel lblNewLabel = new JLabel("Account Number");
-		lblNewLabel.setBounds(16, 51, 121, 14);
+		lblNewLabel.setBounds(58, 55, 121, 14);
 		lblNewLabel.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		accountNumberLabel = new JTextField();
-		accountNumberLabel.setBounds(162, 49, 101, 20);
+		accountNumberLabel.setBounds(204, 53, 101, 20);
 		accountNumberLabel.setBackground(Color.WHITE);
 		accountNumberLabel.setEditable(false);
 		accountNumberLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -77,11 +77,11 @@ public class PaymentConfirmationForm {
 		accountNumberLabel.setColumns(10);
 
 		JLabel lblNewLabel_1 = new JLabel("Remaining Act Balance");
-		lblNewLabel_1.setBounds(16, 76, 136, 14);
+		lblNewLabel_1.setBounds(58, 80, 136, 14);
 		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		remainingBalLabel = new JTextField();
-		remainingBalLabel.setBounds(162, 74, 55, 20);
+		remainingBalLabel.setBounds(204, 78, 55, 20);
 		remainingBalLabel.setBackground(Color.WHITE);
 		remainingBalLabel.setEditable(false);
 		remainingBalLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -89,11 +89,11 @@ public class PaymentConfirmationForm {
 		remainingBalLabel.setColumns(10);
 
 		JLabel lblNewLabel_2 = new JLabel("Customer Name");
-		lblNewLabel_2.setBounds(16, 26, 104, 14);
+		lblNewLabel_2.setBounds(58, 30, 104, 14);
 		lblNewLabel_2.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		fullNameLabel = new JTextField();
-		fullNameLabel.setBounds(162, 24, 157, 20);
+		fullNameLabel.setBounds(204, 28, 157, 20);
 		fullNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		fullNameLabel.setEditable(false);
 		fullNameLabel.setBackground(Color.WHITE);
@@ -101,11 +101,11 @@ public class PaymentConfirmationForm {
 		lblNewLabel_2.setBackground(new Color(0, 0, 0));
 
 		JLabel lblNewLabel_3 = new JLabel("Payment Confirmation #");
-		lblNewLabel_3.setBounds(16, 102, 147, 14);
+		lblNewLabel_3.setBounds(58, 106, 147, 14);
 		lblNewLabel_3.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		paymentAmountLabel = new JTextField();
-		paymentAmountLabel.setBounds(162, 128, 104, 20);
+		paymentAmountLabel.setBounds(204, 132, 104, 20);
 		paymentAmountLabel.setBackground(Color.WHITE);
 		paymentAmountLabel.setEditable(false);
 		paymentAmountLabel.setText(logic.confirmationDisplayLabels(5));
@@ -113,22 +113,22 @@ public class PaymentConfirmationForm {
 		paymentAmountLabel.setColumns(10);
 
 		JLabel lblNewLabel_4 = new JLabel("Payment Amount");
-		lblNewLabel_4.setBounds(16, 127, 121, 14);
+		lblNewLabel_4.setBounds(58, 131, 121, 14);
 		lblNewLabel_4.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		paymentDateLabel = new JTextField();
-		paymentDateLabel.setBounds(162, 153, 86, 20);
+		paymentDateLabel.setBounds(204, 157, 86, 20);
 		paymentDateLabel.setBackground(Color.WHITE);
 		paymentDateLabel.setEditable(false);
 		paymentDateLabel.setText(logic.confirmationDisplayLabels(6));
 		paymentDateLabel.setColumns(10);
 
 		JLabel lblNewLabel_5 = new JLabel("Payment Date");
-		lblNewLabel_5.setBounds(16, 152, 82, 14);
+		lblNewLabel_5.setBounds(58, 156, 82, 14);
 		lblNewLabel_5.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		confirmationNumberLabel = new JTextField();
-		confirmationNumberLabel.setBounds(162, 100, 147, 20);
+		confirmationNumberLabel.setBounds(204, 104, 147, 20);
 		confirmationNumberLabel.setBackground(Color.WHITE);
 		confirmationNumberLabel.setEditable(false);
 		confirmationNumberLabel.setHorizontalAlignment(SwingConstants.LEFT);
@@ -136,8 +136,8 @@ public class PaymentConfirmationForm {
 		confirmationNumberLabel.setColumns(10);
 
 		lblNewLabel_6 = new JLabel("Thank you for your payment.");
-		lblNewLabel_6.setBounds(129, 193, 224, 49);
-		lblNewLabel_6.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblNewLabel_6.setBounds(122, 198, 302, 49);
+		lblNewLabel_6.setFont(new Font("Dialog", Font.BOLD, 20));
 
 		// Added action to Sign Off button
 		JButton btnNewButton = new JButton("Sign Out");
@@ -149,7 +149,7 @@ public class PaymentConfirmationForm {
 			}
 		});
 
-		btnNewButton.setBounds(340, 7, 89, 23);
+		btnNewButton.setBounds(398, 11, 89, 23);
 		btnNewButton.setBackground(Color.ORANGE);
 		PaymentConfirmation.getContentPane().setLayout(null);
 		PaymentConfirmation.getContentPane().add(lblNewLabel_2);

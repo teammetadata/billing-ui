@@ -10,12 +10,6 @@ import javax.swing.JOptionPane;
 
 public class Database_SQLQueries {
 
-	// Main method to test functionality
-//	public static void main(String args[]) {
-//		String s[]=UserConfInfo("15629222");
-//		System.out.println(s[0]+" "+s[1]);
-//	}
-
 	public String loginConfirmation(String username, String password) {
 
 		// Create an command procedure to insert SQL statement into
@@ -44,6 +38,8 @@ public class Database_SQLQueries {
 				{
 					JOptionPane.showMessageDialog(null, "ERROR# 2.2: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
+				} finally {
+					connection.close();
 				}
 			} else // DB connection issues path
 			{
@@ -87,19 +83,19 @@ public class Database_SQLQueries {
 				{
 					JOptionPane.showMessageDialog(null, "ERROR# 2.2b: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
+				} finally {
+					connection.close();
 				}
-			} else // DB connection issues path
-			{
+			} else { // DB connection issues path
 				JOptionPane.showMessageDialog(null, "ERROR# 2.1b: Unexpected error occured. Please contact your "
 						+ "system adminstration for addtional help at 1-800-123-4567.");
 				return false;
 			}
-		} catch (Exception e) // Exception catching path for DB Connection Error
-		{
+		} catch (Exception e) { // Exception catching path for DB Connection Error
 			JOptionPane.showMessageDialog(null, "ERROR# 2.0b: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
 			return false;
-		}
+		} 
 		return false;
 	}
 
@@ -124,6 +120,8 @@ public class Database_SQLQueries {
 				} catch (Exception e) // Exception catching path for any SQL Exceptions or ResultSets Retrieval
 				{
 					JOptionPane.showMessageDialog(null, e);
+				} finally {
+					connection.close();
 				}
 			} else // DB connection issues path
 			{
@@ -171,6 +169,8 @@ public class Database_SQLQueries {
 					System.out.println(e);
 					JOptionPane.showMessageDialog(null, "ERROR# 2.1d: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
+				} finally {
+					connection.close();
 				}
 			}
 		} catch (Exception e) // Exception catching path for DB Connection Error
@@ -224,6 +224,8 @@ public class Database_SQLQueries {
 					System.out.println(e);
 					JOptionPane.showMessageDialog(null, "ERROR# 2.2e: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
+				} finally {
+					connection.close();
 				}
 			}
 		} catch (Exception e) // Exception catching path for DB Connection Error

@@ -9,13 +9,7 @@ public class DatabaseConnection {
 	String password = "fZ&Rtuml3*2Tov^CaA$2slb#9I2&ulgc";
 	String dbURL = "jdbc:sqlserver://metadatabill2.database.windows.net;databaseName=MetaDataDB";
 	Connection connection = null;
-
-//	// Main method to test functionalities
-//		public static void main(String[] args)
-//		{
-//			DBConnection();
-//		}
-
+	
 	public Boolean DBConnection() {
 		try {
 			// Valid that the connection to the SQL DB is valid

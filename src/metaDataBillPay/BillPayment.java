@@ -3,6 +3,7 @@ package metaDataBillPay;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.HeadlessException;
 import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
@@ -157,6 +158,7 @@ public class BillPayment {
 		panel.setFocusTraversalKeysEnabled(false);
 
 		cardCVVField = new JPasswordField();
+		cardCVVField.setColumns(3);
 
 		JLabel lblNewLabel_1_8_1 = new JLabel("Payment Amount");
 		lblNewLabel_1_8_1.setFont(new Font("Dialog", Font.PLAIN, 12));
@@ -265,7 +267,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(balanceDueLabel);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 218, 185));
+		panel_1.setBackground(Color.ORANGE);
 		panel_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panel_1.setBounds(481, 169, 128, 40);
 		frmMetabillpaylogin.getContentPane().add(panel_1);
@@ -304,29 +306,36 @@ public class BillPayment {
 					if (!cardNumberField.getText().isEmpty() && !cardCVV.isEmpty()
 							&& !cardExpirationField.getText().isEmpty() && !zipCodeField.getText().isEmpty()
 							&& !paymentAmountField.getText().isEmpty()) {
-						if (Double.parseDouble(paymentAmountField.getText()) > 0
-								&& Double.parseDouble(paymentAmountField.getText()) <= Double
-										.parseDouble(balanceDueLabel.getText().substring(1))) {
-							// Initialize business layer and send over user card info
-							Business_Layer logic = new Business_Layer();
-							Boolean result = logic.cardInfoVerification(cardTypeField.getSelectedItem().toString(),
-									cardNumberField.getText(), cardCVV, zipCodeField.getText(),
-									cardExpirationField.getText());
+						try {
+							if (Double.parseDouble(paymentAmountField.getText()) > 0
+									&& Double.parseDouble(paymentAmountField.getText()) <= Double
+											.parseDouble(balanceDueLabel.getText().substring(1))) {
+								// Initialize business layer and send over user card info
+								Business_Layer logic = new Business_Layer();
+								Boolean result = logic.cardInfoVerification(cardTypeField.getSelectedItem().toString(),
+										cardNumberField.getText(), cardCVV, zipCodeField.getText(),
+										cardExpirationField.getText());
 
-							Boolean paymentCompleted = logic
-									.paymentSubmissionAndUpdate(Double.parseDouble(paymentAmountField.getText()));
-							// If statement with verification paths for card information
-							if (result == true && paymentCompleted == true) {
-								JOptionPane.showMessageDialog(null, "Payment successful.");
-								frmMetabillpaylogin.setVisible(false);
-								PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
-								receiptForm.PaymentConfirmation.setVisible(true);
-							} else // Invalid information provided path
-							{
-								JOptionPane.showMessageDialog(null, "Invalid card information. " + "Please try again.");
+								Boolean paymentCompleted = logic
+										.paymentSubmissionAndUpdate(Double.parseDouble(paymentAmountField.getText()));
+								// If statement with verification paths for card information
+								if (result == true && paymentCompleted == true) {
+									JOptionPane.showMessageDialog(null, "Payment successful.");
+									frmMetabillpaylogin.setVisible(false);
+									PaymentConfirmationForm receiptForm = new PaymentConfirmationForm();
+									receiptForm.PaymentConfirmation.setVisible(true);
+								} else // Invalid information provided path
+								{
+									JOptionPane.showMessageDialog(null,
+											"Invalid card information. " + "Please try again.");
+								}
+							} else {
+								JOptionPane.showMessageDialog(null,
+										"Please enter a valid payment amount that is ess than remaining amount and greater than $0.00");
 							}
-						} else {
-							JOptionPane.showMessageDialog(null, "Please enter a valid payment amount. ");
+						} catch (Exception a) {
+							JOptionPane.showMessageDialog(null,
+									"ERROR# 4: Invalid amount value entered. Please try again.");
 						}
 					} else // Path if 1 or more fields are left NULL
 					{

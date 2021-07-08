@@ -9,11 +9,6 @@ import javax.swing.JOptionPane;
 public class Business_Layer {
 	private static String paymentAmountBill;
 
-	// // Main method to test functionality
-//		public static void main(String[] args) {
-//			
-//			CardInfoVerification();
-//		}
 	public String getLoginInfo(String user, String pwd) {
 		// Get login info
 		String username = user;
@@ -62,10 +57,10 @@ public class Business_Layer {
 	}
 
 	public Boolean paymentSubmissionAndUpdate(double payment) {
-		// Get payment amount
-		paymentAmountBill = (String.format("%.2f", payment));
-		Database_SQLQueries db = new Database_SQLQueries();
 		try {
+			// Get payment amount
+			paymentAmountBill = (String.format("%.2f", payment));
+			Database_SQLQueries db = new Database_SQLQueries();
 			// Use DB payment method to update payment amount into the DB
 			Boolean result = db.paymentUpdate(payment);
 			if (result == true) {
@@ -82,58 +77,68 @@ public class Business_Layer {
 	}
 
 	public String billPaymentDisplayClientInfo(int displayField) {
-		String info[] = Database_SQLQueries.billPayment(LoginWindowForm.actNumber);
-		if (displayField == 1) {
-			return info[0]; // Path for client full name label
-		} else if (displayField == 2) {
-			return info[2];// Path for account number label
+		try {
+			String info[] = Database_SQLQueries.billPayment(LoginWindowForm.actNumber);
+			if (displayField == 1) {
+				return info[0]; // Path for client full name label
+			} else if (displayField == 2) {
+				return info[2];// Path for account number label
 
-		} else if (displayField == 3) {
-			return "$" + info[1]; // Path for remaning balance label
+			} else if (displayField == 3) {
+				return "$" + info[1]; // Path for remaning balance label
 
-		} else if (displayField == 4) {
-			return info[3]; // Path for payment due label
+			} else if (displayField == 4) {
+				return info[3]; // Path for payment due label
 
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "ERROR# 3d: Unexpected error occured. Please contact your system "
+					+ "adminstration for addtional help at 1-800-123-4567.");
 		}
 		return "";
 
 	}
 
 	public String confirmationDisplayLabels(int display) {
-		String info[] = Database_SQLQueries.userConfInfo(LoginWindowForm.actNumber);
+		try {
+			String info[] = Database_SQLQueries.userConfInfo(LoginWindowForm.actNumber);
 
-		if (display == 1) {
-			return info[0]; // Path for client full name label
-		}
-
-		else if (display == 3) {
-			return "$" + info[1]; // Path remaining balance label
-
-		} else if (display == 4) {
-			// Path for confirmation/reference number label
-			Random rd = new Random();
-			int rdNumb;
-			String m[] = new String[8];
-
-			for (int i = 0; i < 8; i++) {
-				rdNumb = rd.nextInt(8);
-
-				m[i] = Integer.toString(rdNumb);
+			if (display == 1) {
+				return info[0]; // Path for client full name label
 			}
 
-			String number = m[0] + m[1] + m[2] + m[3] + m[4] + m[5] + m[6] + m[7];
-			return number;
-		} else if (display == 5) {
-			// Path for payment amount label
-			return "$" + paymentAmountBill;
-			
-		} else if (display == 6) {
-			// Path for payment date
-			SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-			Date date = new Date();
-			return formatter.format(date);
-		} else {
+			else if (display == 3) {
+				return "$" + info[1]; // Path remaining balance label
+
+			} else if (display == 4) {
+				// Path for confirmation/reference number label
+				Random rd = new Random();
+				int rdNumb;
+				String m[] = new String[8];
+
+				for (int i = 0; i < 8; i++) {
+					rdNumb = rd.nextInt(8);
+
+					m[i] = Integer.toString(rdNumb);
+				}
+
+				String number = m[0] + m[1] + m[2] + m[3] + m[4] + m[5] + m[6] + m[7];
+				return number;
+			} else if (display == 5) {
+				// Path for payment amount label
+				return "$" + paymentAmountBill;
+				
+			} else if (display == 6) {
+				// Path for payment date
+				SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+				Date date = new Date();
+				return formatter.format(date);
+			} 
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "ERROR# 3e: Unexpected error occured. Please contact your system "
+					+ "adminstration for addtional help at 1-800-123-4567.");
 			return null;
 		}
+		return null;
 	}
 }
