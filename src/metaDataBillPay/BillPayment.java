@@ -3,7 +3,6 @@ package metaDataBillPay;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.HeadlessException;
 import java.awt.Panel;
 import java.awt.SystemColor;
 import java.awt.Toolkit;
@@ -22,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
@@ -43,6 +43,7 @@ public class BillPayment {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					BillPayment window = new BillPayment();
@@ -66,6 +67,7 @@ public class BillPayment {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize() {
 		Business_Layer logic = new Business_Layer();
 		frmMetabillpaylogin = new JFrame();
@@ -77,7 +79,7 @@ public class BillPayment {
 		frmMetabillpaylogin.setAutoRequestFocus(false);
 		frmMetabillpaylogin.setResizable(false);
 		frmMetabillpaylogin.setBounds(100, 100, 639, 454);
-		frmMetabillpaylogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmMetabillpaylogin.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Full Name");
@@ -283,6 +285,7 @@ public class BillPayment {
 		// Added action to Sign Off button
 		JButton signOffButton = new JButton("Sign Off");
 		signOffButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				frmMetabillpaylogin.setVisible(false);
 				LoginWindowForm window = new LoginWindowForm();
@@ -297,6 +300,7 @@ public class BillPayment {
 		// Submit Payment Button Functionality
 		// ************************************************************************************************************
 		submitPaymentButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				{
 					// Initialize CVV code field to be converted
@@ -331,7 +335,7 @@ public class BillPayment {
 								}
 							} else {
 								JOptionPane.showMessageDialog(null,
-										"Please enter a valid payment amount that is ess than remaining amount and greater than $0.00");
+										"Please enter a valid payment amount that is less than remaining amount and greater than $0.00");
 							}
 						} catch (Exception a) {
 							JOptionPane.showMessageDialog(null,

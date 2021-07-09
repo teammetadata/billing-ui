@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -29,6 +31,7 @@ public class PaymentConfirmationForm {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					PaymentConfirmationForm frame = new PaymentConfirmationForm();
@@ -58,7 +61,7 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.getContentPane().setEnabled(false);
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		PaymentConfirmation.setTitle("MetaData Electric Inc. Payment Receipt");
-		PaymentConfirmation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		PaymentConfirmation.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		PaymentConfirmation.setBounds(100, 100, 537, 325);
 		PaymentConfirmation.getContentPane().setBackground(Color.LIGHT_GRAY);
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
@@ -142,6 +145,7 @@ public class PaymentConfirmationForm {
 		// Added action to Sign Off button
 		JButton btnNewButton = new JButton("Sign Out");
 		btnNewButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				PaymentConfirmation.setVisible(false);
 				LoginWindowForm window = new LoginWindowForm();

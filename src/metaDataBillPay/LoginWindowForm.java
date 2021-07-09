@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.SoftBevelBorder;
@@ -36,6 +37,7 @@ public class LoginWindowForm {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
+			@Override
 			public void run() {
 				try {
 					LoginWindowForm window = new LoginWindowForm();
@@ -88,7 +90,7 @@ public class LoginWindowForm {
 		frmMetabillpaylogin.setAutoRequestFocus(false);
 		frmMetabillpaylogin.setResizable(false);
 		frmMetabillpaylogin.setBounds(100, 100, 327, 427);
-		frmMetabillpaylogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmMetabillpaylogin.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frmMetabillpaylogin.getContentPane().setLayout(null);
 
 		// ************************************************************************************************************
@@ -96,6 +98,7 @@ public class LoginWindowForm {
 		// ************************************************************************************************************
 		JButton loginButton = new JButton("Login");
 		loginButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				{
 					String pwd = new String(passwordField.getPassword()); // Password field needs to be converted
