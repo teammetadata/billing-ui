@@ -75,7 +75,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().setForeground(Color.LIGHT_GRAY);
 		frmMetabillpaylogin.setForeground(SystemColor.desktop);
 		frmMetabillpaylogin.setTitle("MetaBillPayLogin");
-		frmMetabillpaylogin.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
+		frmMetabillpaylogin.setIconImage(Toolkit.getDefaultToolkit().getImage("./artifacts/icon.png"));
 		frmMetabillpaylogin.setAutoRequestFocus(false);
 		frmMetabillpaylogin.setResizable(false);
 		frmMetabillpaylogin.setBounds(100, 100, 639, 454);
@@ -104,7 +104,7 @@ public class BillPayment {
 		frmMetabillpaylogin.getContentPane().add(separator_1);
 
 		JLabel lblNewLabel_3 = new JLabel("logo label");
-		lblNewLabel_3.setIcon(new ImageIcon(".//artifacts//logo.png"));
+		lblNewLabel_3.setIcon(new ImageIcon("./artifacts/logo.png"));
 		lblNewLabel_3.setBounds(167, 287, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 

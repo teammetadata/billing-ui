@@ -65,7 +65,7 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.setBounds(100, 100, 537, 325);
 		PaymentConfirmation.getContentPane().setBackground(Color.LIGHT_GRAY);
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
-		PaymentConfirmation.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
+		PaymentConfirmation.setIconImage(Toolkit.getDefaultToolkit().getImage("./artifacts/icon.png"));
 
 		JLabel lblNewLabel = new JLabel("Account Number");
 		lblNewLabel.setBounds(58, 55, 121, 14);
