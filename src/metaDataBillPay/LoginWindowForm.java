@@ -3,13 +3,15 @@ package metaDataBillPay;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Panel;
 import java.awt.SystemColor;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 import java.util.prefs.Preferences;
-
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -81,12 +83,19 @@ public class LoginWindowForm {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		Image smallIcon = null;
+		try {
+			URL url = new URL(
+					"https://1.bp.blogspot.com/-1wQfEcfaoXM/YOjTGljPplI/AAAAAAAAFGk/4YGPpSXXCxIzJO6MIw9hu1Q0QP4NPz1DgCLcBGAsYHQ/s0/icon.png");
+			smallIcon = ImageIO.read(url);
+		} catch (IOException e) {
+		}
 		frmMetabillpaylogin = new JFrame();
 		frmMetabillpaylogin.getContentPane().setBackground(new Color(192, 192, 192));
 		frmMetabillpaylogin.getContentPane().setForeground(Color.LIGHT_GRAY);
 		frmMetabillpaylogin.setForeground(SystemColor.desktop);
 		frmMetabillpaylogin.setTitle("MetaBillPayLogin");
-		frmMetabillpaylogin.setIconImage(Toolkit.getDefaultToolkit().getImage(".//artifacts//icon.png"));
+		frmMetabillpaylogin.setIconImage(smallIcon);
 		frmMetabillpaylogin.setAutoRequestFocus(false);
 		frmMetabillpaylogin.setResizable(false);
 		frmMetabillpaylogin.setBounds(100, 100, 327, 427);
@@ -194,8 +203,15 @@ public class LoginWindowForm {
 		remember.setBounds(81, 195, 128, 23);
 		frmMetabillpaylogin.getContentPane().add(remember);
 
+		Image bigIcon = null;
+		try {
+			URL url = new URL(
+					"https://1.bp.blogspot.com/-U6iSATW2Iac/YOjS-kBJ5AI/AAAAAAAAFGg/CelYw0QfHUwMN-WF3Z3tCmrAgm7s-kCcACLcBGAsYHQ/s0/metadatalogo.png");
+			bigIcon = ImageIO.read(url);
+		} catch (IOException e) {
+		}
 		JLabel lblNewLabel_3 = new JLabel();
-		lblNewLabel_3.setIcon(new ImageIcon("./artifacts/logo.png"));
+		lblNewLabel_3.setIcon(new ImageIcon(bigIcon));
 		lblNewLabel_3.setBounds(29, 288, 281, 94);
 		frmMetabillpaylogin.getContentPane().add(lblNewLabel_3);
 

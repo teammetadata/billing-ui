@@ -3,16 +3,17 @@ package metaDataBillPay;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Toolkit;
-
+import java.awt.Image;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
-
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 
 public class PaymentConfirmationForm {
@@ -56,7 +57,13 @@ public class PaymentConfirmationForm {
 	 */
 	private void initialize() {
 		Business_Layer logic = new Business_Layer();
-
+		Image smallIcon = null;
+		try {
+			URL url = new URL(
+					"https://1.bp.blogspot.com/-1wQfEcfaoXM/YOjTGljPplI/AAAAAAAAFGk/4YGPpSXXCxIzJO6MIw9hu1Q0QP4NPz1DgCLcBGAsYHQ/s0/icon.png");
+			smallIcon = ImageIO.read(url);
+		} catch (IOException e) {
+		}
 		PaymentConfirmation = new JFrame();
 		PaymentConfirmation.getContentPane().setEnabled(false);
 		PaymentConfirmation.getContentPane().setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
@@ -65,7 +72,7 @@ public class PaymentConfirmationForm {
 		PaymentConfirmation.setBounds(100, 100, 537, 325);
 		PaymentConfirmation.getContentPane().setBackground(Color.LIGHT_GRAY);
 		PaymentConfirmation.getContentPane().setForeground(Color.BLACK);
-		PaymentConfirmation.setIconImage(Toolkit.getDefaultToolkit().getImage("./artifacts/icon.png"));
+		PaymentConfirmation.setIconImage(smallIcon);
 
 		JLabel lblNewLabel = new JLabel("Account Number");
 		lblNewLabel.setBounds(58, 55, 121, 14);
