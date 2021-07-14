@@ -86,7 +86,7 @@ public class PaymentConfirmationForm {
 		accountNumberLabel.setText(LoginWindowForm.actNumber);
 		accountNumberLabel.setColumns(10);
 
-		JLabel lblNewLabel_1 = new JLabel("Remaining Act Balance");
+		JLabel lblNewLabel_1 = new JLabel("Remaining Acct. Balance");
 		lblNewLabel_1.setBounds(58, 80, 136, 14);
 		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
@@ -110,7 +110,7 @@ public class PaymentConfirmationForm {
 		fullNameLabel.setText(logic.confirmationDisplayLabels(1));
 		lblNewLabel_2.setBackground(new Color(0, 0, 0));
 
-		JLabel lblNewLabel_3 = new JLabel("Payment Confirmation #");
+		JLabel lblNewLabel_3 = new JLabel("Payment Confirmation Number");
 		lblNewLabel_3.setBounds(58, 106, 147, 14);
 		lblNewLabel_3.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 

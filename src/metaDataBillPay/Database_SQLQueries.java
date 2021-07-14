@@ -131,7 +131,8 @@ public class Database_SQLQueries {
 			}
 		} catch (Exception e) // Exception catching path for DB Connection Error
 		{
-			JOptionPane.showMessageDialog(null, e);
+			JOptionPane.showMessageDialog(null, "ERROR# 2.0c: Unexpected error occured. Please contact your "
+					+ "system adminstration for addtional help at 1-800-123-4567.");
 			return false;
 		}
 		return false;
@@ -167,11 +168,15 @@ public class Database_SQLQueries {
 				} catch (Exception e) // Exception catching path for any SQL Exceptions or ResultSets Retrieval
 				{
 					System.out.println(e);
-					JOptionPane.showMessageDialog(null, "ERROR# 2.1d: Unexpected error occurred. Please contact your"
+					JOptionPane.showMessageDialog(null, "ERROR# 2.2d: Unexpected error occurred. Please contact your"
 							+ " system administration for additional help at 1-800-123-4567.");
 				} finally {
 					connection.close();
 				}
+			} else // DB connection issues path
+			{
+				JOptionPane.showMessageDialog(null, "ERROR# 2.1d: Unexpected error occured. Please contact your "
+						+ "system adminstration for addtional help at 1-800-123-4567.");
 			}
 		} catch (Exception e) // Exception catching path for DB Connection Error
 		{

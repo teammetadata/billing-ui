@@ -206,7 +206,7 @@ public class BillPayment {
 		JLabel lblNewLabel_1 = new JLabel("Card Type");
 		lblNewLabel_1.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
-		JLabel lblNewLabel_1_6 = new JLabel("Card Card #");
+		JLabel lblNewLabel_1_6 = new JLabel("Card Number");
 		lblNewLabel_1_6.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(gl_panel.createParallelGroup(Alignment.TRAILING).addGroup(gl_panel
@@ -300,7 +300,7 @@ public class BillPayment {
 		submitPaymentButton.setFont(new Font("Kohinoor Bangla", Font.PLAIN, 12));
 
 		// Added action to Sign Off button
-		JButton signOffButton = new JButton("Sign Off");
+		JButton signOffButton = new JButton("Sign Out");
 		signOffButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -19,7 +19,7 @@ public class DatabaseConnection {
 				return true;
 			} else // Path if connection is invalid
 			{
-				return null;
+				return false;
 			}
 		} catch (Exception e) // Exception catching path
 		{
