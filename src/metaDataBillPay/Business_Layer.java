@@ -2,6 +2,7 @@ package metaDataBillPay;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.IllegalFormatException;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
@@ -10,25 +11,18 @@ public class Business_Layer {
 	private static String paymentAmountBill;
 
 	public String getLoginInfo(String user, String pwd) {
-		// Get login info
+		// Get login info and pass values
 		String username = user;
 		String password = pwd;
 
 		Database_SQLQueries db = new Database_SQLQueries();
-		try {
-			// Use DB login confirmation method to see if login was successful or not
-			String result = db.loginConfirmation(username, password);
-			if (result.isEmpty()) {
-				return "";
-			} else {
-				return result;
-			}
-		} catch (Exception e) // Exception catching path
-		{
-			JOptionPane.showMessageDialog(null, "ERROR# 3: Unexpected error occured. Please contact your system "
-					+ "adminstration for addtional help at 1-800-123-4567.");
+
+		String result = db.loginConfirmation(username, password);
+		if (result.isEmpty()) {
+			return ""; // Returns nothing if no connection or if incorrect credentials
+		} else {
+			return result; // Returns account number back to front end GUI
 		}
-		return "";
 	}
 
 	public Boolean cardInfoVerification(String type, String number, String code, String zip, String date) {
@@ -40,105 +34,99 @@ public class Business_Layer {
 		String expirationDate = date;
 
 		Database_SQLQueries db = new Database_SQLQueries();
-		try {
-			// Use DB card verification method to see if card info is valid or not
-			Boolean result = db.cardVerification(cardType, cardNumber, cardCVV, zipCode, expirationDate);
-			if (result == true) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (Exception e) // Exception catching path
-		{
-			JOptionPane.showMessageDialog(null, "ERROR# 3b: Unexpected error occured. Please contact your system "
-					+ "adminstration for addtional help at 1-800-123-4567.");
+		// Use DB card verification method to see if card info is valid or not
+		Boolean result = db.cardVerification(cardType, cardNumber, cardCVV, zipCode, expirationDate);
+		if (result == true) {
+			return true;
+		} else {
+			return false;
 		}
-		return false;
+
 	}
 
 	public Boolean paymentSubmissionAndUpdate(double payment) {
+
+		// Get payment amount
 		try {
-			// Get payment amount
 			paymentAmountBill = (String.format("%.2f", payment));
-			Database_SQLQueries db = new Database_SQLQueries();
-			// Use DB payment method to update payment amount into the DB
-			Boolean result = db.paymentUpdate(payment);
-			if (result == true) {
-				return true;
-			} else {
-				return false;
-			}
-		} catch (Exception e) // Exception catching path
-		{
-			JOptionPane.showMessageDialog(null, "ERROR# 3c: Unexpected error occured. Please contact your system "
+		} catch (IllegalFormatException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "ERROR# 3.1: Unexpected error occured. Please contact your system "
 					+ "adminstration for addtional help at 1-800-123-4567.");
+			return false;
 		}
-		return false;
+		Database_SQLQueries db = new Database_SQLQueries();
+		// Use DB payment method to update payment amount into the DB
+		Boolean result = db.paymentUpdate(payment);
+		if (result == true) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public String billPaymentDisplayClientInfo(int displayField) {
-		try {
-			String info[] = Database_SQLQueries.billPayment(LoginWindowForm.actNumber);
-			if (displayField == 1) {
-				return info[0]; // Path for client full name label
-			} else if (displayField == 2) {
-				return info[2];// Path for account number label
+		if (displayField == 1) {
+			return Database_SQLQueries.billPayment(LoginWindowForm.actNumber, displayField); // Path for client full
+																								// name label
+		} else if (displayField == 2) {
+			return Database_SQLQueries.billPayment(LoginWindowForm.actNumber, displayField);// Path for account number
+																							// label
 
-			} else if (displayField == 3) {
-				return "$" + info[1]; // Path for remaning balance label
+		} else if (displayField == 3) {
+			return "$" + Database_SQLQueries.billPayment(LoginWindowForm.actNumber, displayField); // Path for remaning
+																									// balance label
 
-			} else if (displayField == 4) {
-				return info[3]; // Path for payment due label
+		} else if (displayField == 4) {
+			return Database_SQLQueries.billPayment(LoginWindowForm.actNumber, displayField); // Path for payment due
+																								// label
 
-			}
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "ERROR# 3d: Unexpected error occured. Please contact your system "
-					+ "adminstration for addtional help at 1-800-123-4567.");
 		}
 		return "";
-
 	}
 
 	public String confirmationDisplayLabels(int display) {
-		try {
-			String info[] = Database_SQLQueries.userConfInfo(LoginWindowForm.actNumber);
+		if (display == 1) {
+			return Database_SQLQueries.userConfInfo(LoginWindowForm.actNumber, display); // Path for client full
+																							// name label
+		}
 
-			if (display == 1) {
-				return info[0]; // Path for client full name label
+		else if (display == 3) {
+			return "$" + Database_SQLQueries.userConfInfo(LoginWindowForm.actNumber, display); // Path remaining
+																								// balance label
+
+		} else if (display == 4) {
+			// Path for confirmation/reference number label
+			Random rd = new Random();
+			int rdNumb;
+			String m[] = new String[8];
+
+			for (int i = 0; i < 8; i++) {
+				rdNumb = rd.nextInt(8);
+
+				m[i] = Integer.toString(rdNumb);
 			}
 
-			else if (display == 3) {
-				return "$" + info[1]; // Path remaining balance label
+			String number = m[0] + m[1] + m[2] + m[3] + m[4] + m[5] + m[6] + m[7];
+			return number;
+		} else if (display == 5) {
+			// Path for payment amount label
+			return "$" + paymentAmountBill;
 
-			} else if (display == 4) {
-				// Path for confirmation/reference number label
-				Random rd = new Random();
-				int rdNumb;
-				String m[] = new String[8];
-
-				for (int i = 0; i < 8; i++) {
-					rdNumb = rd.nextInt(8);
-
-					m[i] = Integer.toString(rdNumb);
-				}
-
-				String number = m[0] + m[1] + m[2] + m[3] + m[4] + m[5] + m[6] + m[7];
-				return number;
-			} else if (display == 5) {
-				// Path for payment amount label
-				return "$" + paymentAmountBill;
-				
-			} else if (display == 6) {
-				// Path for payment date
-				SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
-				Date date = new Date();
-				return formatter.format(date);
-			} 
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "ERROR# 3e: Unexpected error occured. Please contact your system "
-					+ "adminstration for addtional help at 1-800-123-4567.");
-			return null;
+		} else if (display == 6) {
+			// Path for payment date
+			SimpleDateFormat formatter;
+			try {
+				formatter = new SimpleDateFormat("MM/dd/yyyy");
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "ERROR# 3.1b: Unexpected error occured. Please contact your system "
+						+ "adminstration for addtional help at 1-800-123-4567.");
+				return null;
+			}
+			Date date = new Date();
+			return formatter.format(date);
 		}
-		return null;
+		return "";
 	}
 }

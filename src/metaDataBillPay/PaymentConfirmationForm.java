@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
@@ -38,7 +39,8 @@ public class PaymentConfirmationForm {
 					PaymentConfirmationForm frame = new PaymentConfirmationForm();
 					frame.PaymentConfirmation.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(null, "ERROR# 4.1e: Unexpected error occured. Please contact your "
+							+ "system adminstration for addtional help at 1-800-123-4567.");
 				}
 			}
 		});

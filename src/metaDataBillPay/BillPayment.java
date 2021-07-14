@@ -52,7 +52,8 @@ public class BillPayment {
 					BillPayment window = new BillPayment();
 					window.frmMetabillpaylogin.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(null, "ERROR# 5.1: Unexpected error occured. Please contact your "
+							+ "system adminstration for addtional help at 1-800-123-4567.");
 				}
 			}
 		});
@@ -356,7 +357,7 @@ public class BillPayment {
 							}
 						} catch (Exception a) {
 							JOptionPane.showMessageDialog(null,
-									"ERROR# 4: Invalid amount value entered. Please try again.");
+									"Invalid amount value entered. Please try again.");
 						}
 					} else // Path if 1 or more fields are left NULL
 					{
